@@ -1,0 +1,45 @@
+
+
+
+
+/* Home: Program */
+.single-pb_event.postid-2809 #program::before {
+	background: linear-gradient(180deg, rgba(0,0,0,.666) 0%, rgba(0,0,0,.333) 100%);
+	content: '';
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.single-pb_event.postid-2809 #program rs-module rs-slides rs-slide .pb-date {
+	color: var(--pb-globals-color-pastel);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.single-pb_event.postid-2809 #program rs-module rs-slides rs-slide .pb-date .pb-date-item-day {
+	font-size: 6rem;
+	margin-bottom: .3em;
+}
+
+
+
+/* HOME: Team / Sponsors [common] */
+@media (max-width: 767px) {
+
+	.single-pb_event.postid-2809 .et_pb_row:is(.pb-sponsors, .pb-team-members) {
+		justify-content: space-between;
+	}
+
+	.single-pb_event.postid-2809 .et_pb_row:is(.pb-sponsors, .pb-team-members)::after {
+		content: none;
+	}
+
+	.single-pb_event.postid-2809 .et_pb_row:is(.pb-sponsors, .pb-team-members) .et_pb_column {
+		width: calc( (100% - 5vw) / 2) !important;
+	}
+
+}

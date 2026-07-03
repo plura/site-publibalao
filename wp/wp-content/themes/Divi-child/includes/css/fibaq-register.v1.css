@@ -1,0 +1,247 @@
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls {
+	--globals-fonts-inc: 15;
+	--globals-font-size-h2: 22px;
+	--globals-font-size-h3: calc( var(--globals-font-size-h2) * ( 100 - var(--globals-fonts-inc) ) / 100 );
+	--globals-font-size-h4: calc( var(--globals-font-size-h3) * ( 100 - var(--globals-fonts-inc) ) / 100 );
+}
+ 
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls .fieldset-cf7mls-wrapper,
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls .cf7mls-btns,
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls .fieldset-cf7mls-wrapper :is(h2, h3, h4) {
+    width: 100%;
+}
+   
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls :is(h2, h3, h4) {
+	padding: 0;
+	margin-bottom: var(--m);
+}
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls .fieldset-cf7mls-wrapper h2 {
+	font-size: var(--globals-font-size-h2);
+}
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls .fieldset-cf7mls-wrapper h3 {
+	font-size: var(--globals-font-size-h3);
+}
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls .fieldset-cf7mls-wrapper h4 {
+	font-size: var(--globals-font-size-h4);
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls .fieldset-cf7mls-wrapper fieldset.fieldset-cf7mls {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap:not( :is(
+
+		[data-name="pilot-address1"], [data-name="pilot-address2"],
+
+		[data-name="pilot-license-by"], [data-name="pilot-license"], [data-name="pilot-medical-exam"],
+		
+		[data-name="balloon-photo"], [data-name="balloon-certificate"], [data-name="balloon-certificate-registration"], [data-name="balloon-third-party-limit"], [data-name="balloon-arc"], [data-name="balloon-insurance"], [data-name="balloon-insurance-company"],
+
+		[data-name="crew-name1"], [data-name="crew-name2"], [data-name="crew-name3"], [data-name="crew-room-number"], [data-name="crew-room-type"],
+
+		[data-name="invoice"], [data-name="invoice-address"],
+
+		[data-name="comments"], [data-name="consent"]		
+	
+	) ) {
+	
+	width: calc( (100% - var(--m)) / 2);
+}
+
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name*="crew-room-type-number"] {
+
+    width: calc( (100% - var(--m) * 2 ) / 3);
+
+}
+
+
+/* field type file */
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap:is(
+
+	[data-name="pilot-license"], [data-name="pilot-medical-exam"],
+
+	[data-name="balloon-photo"], [data-name="balloon-certificate"], [data-name="balloon-certificate-registration"], [data-name="balloon-arc"], [data-name="balloon-insurance"]
+
+	) {
+
+	align-items: center;
+	border: 1px solid var(--color-off-border);
+	color: #4e4e4e;
+	display: flex;
+	min-height: var(--s);
+
+}
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap:is(
+
+		[data-name="pilot-license"], [data-name="pilot-medical-exam"],
+
+		[data-name="balloon-photo"], [data-name="balloon-certificate"], [data-name="balloon-certificate-registration"], [data-name="balloon-arc"], [data-name="balloon-insurance"]
+
+	) input {
+
+	flex: 1;
+	width:  auto;
+
+}
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap:is(
+
+		[data-name="pilot-license"], [data-name="pilot-medical-exam"], 
+
+		[data-name="balloon-photo"], [data-name="balloon-certificate"], [data-name="balloon-certificate-registration"], [data-name="balloon-arc"], [data-name="balloon-insurance"]
+
+	)::before {
+
+	color: var(--color-off-border);
+	content:  'Label';
+	display: block;
+	font-weight: 400;
+	font-size: .7rem;
+	line-height: initial;
+	padding: 0 0 0 10px;
+	width: 100%;
+
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="pilot-license"]::before {
+	content: 'Licença de Piloto';
+}
+
+.wpml-lang-en.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="pilot-license"]::before {
+	content: 'Pilot License';
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="pilot-medical-exam"]::before {
+	content: 'Exame Médico';
+}
+
+.wpml-lang-en.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="pilot-medical-exam"]::before {
+	content: 'Medical Exam';
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-photo"]::before {
+	content: 'Foto';
+}
+
+.wpml-lang-en.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-photo"]::before {
+	content: 'Photo';
+}
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-certificate"]::before {
+	content: 'Certificado Navegabilidade';
+}
+
+.wpml-lang-en.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-certificate"]::before {
+	content: 'Certificate of Navigability';
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-certificate-registration"]::before {
+	content: 'Certificado Matrícula';
+}
+
+.wpml-lang-en.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-certificate-registration"]::before {
+	content: 'Registration Certificate';
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-arc"]::before {
+	content: 'ARC';
+}
+
+
+.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-insurance"]::before {
+	content: 'Seguro';
+}
+
+.wpml-lang-en.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap[data-name="balloon-insurance"]::before {
+	content: 'Insurance';
+}
+
+
+
+.wpmlobj-id-3066 form.wpcf7-form input[type="date"][data-placeholder]::before {
+	text-transform: uppercase;
+}
+
+
+
+
+@media (max-width: 767px) {
+
+	.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap:is(
+
+		[data-name="pilot-license"], [data-name="pilot-medical-exam"],
+
+		[data-name="balloon-photo"], [data-name="balloon-certificate"], [data-name="balloon-certificate-registration"], [data-name="balloon-arc"], [data-name="balloon-insurance"]
+
+		) {
+
+		flex-wrap: wrap;
+		padding-top: calc( var(--s) / 5 );
+
+	}
+
+	.wpmlobj-id-3066 form.wpcf7-form input[type="date"] {
+		background:  none;
+		/*flex-direction: row-reverse;
+		padding-right: calc(8px + 50px);*/
+		text-align: right;
+	}
+
+	.wpmlobj-id-3066 form.wpcf7-form input[type="date"][data-placeholder] {
+		font-size: .6rem;
+	}
+
+	.wpmlobj-id-3066 form.wpcf7-form input[type="date"][data-placeholder]::before {
+		content: none;
+		font-size: .5rem;
+		min-width: 50px;
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	.wpmlobj-id-3066 form.wpcf7-form.cf7mls fieldset.fieldset-cf7mls .wpcf7-form-control-wrap:is(
+
+			[data-name="pilot-license"], [data-name="pilot-medical-exam"], 
+
+			[data-name="balloon-photo"], [data-name="balloon-certificate"], [data-name="balloon-certificate-registration"], [data-name="balloon-arc"], [data-name="balloon-insurance"]
+
+		)::before {
+
+		font-size: .8rem;
+		width: 160px;
+
+	}
+
+	.wpmlobj-id-3066 form.wpcf7-form input[type="date"][data-placeholder]::before {
+	    text-transform: capitalize;
+	}
+
+}
+
+
+@media (min-width: 981px) {
+
+	.wpmlobj-id-3066 form.wpcf7-form.cf7mls {
+		margin: 0 auto;
+		max-width: calc( 768px * .8);
+	}
+
+}

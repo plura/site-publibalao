@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<wpml-config>
+	<shortcode-string>
+		<shortcode name="pb-button-content-popup" attribute="label" />
+	</shortcode-string>
+</wpml-config>

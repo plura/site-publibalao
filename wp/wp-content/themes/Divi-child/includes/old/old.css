@@ -1,0 +1,150 @@
+/* MAP:  HOME / CONTACTOS */
+:is(.page-id-2109, .page-id-2713) #map-holder > div[id^="pb-locations-map"] {
+	min-height: 400px;
+}
+
+
+
+
+
+
+/* HOME */
+.page-id-2109 form.wpcf7-form .wpcf7-form-control-wrap.user-email,
+.page-id-2109 form.wpcf7-form .wpcf7-form-control-wrap.user-telephone {
+	width: calc( (100% - var(--s)) / 2); 
+}
+
+
+
+/* SERVICES 2 */
+.page-id-2109 .pb-service2 {
+	--n: 4px;
+	padding: 40px;
+	margin: calc( var(--pb-globals-service-gap) / 2) 0;
+}
+
+
+.page-id-2109 .pb-service2,
+.page-id-2109 .pb-service2 .et_pb_promo_description,
+.page-id-2109 .pb-service2 .et_pb_promo_description > div {
+	display: flex;
+	flex-direction: column;
+}
+
+.page-id-2109 .pb-service2 .et_pb_promo_description {
+	flex-grow: 1;
+	justify-content: space-between;
+	padding-bottom: 0;
+}
+
+.page-id-2109 .pb-service2 .et_pb_promo_description > div { 
+	background:  rgba(0,0,0, calc(2/3));
+	padding:  40px;
+	justify-content: flex-end;
+}
+
+.page-id-2109 .et_pb_section.pb-service-weddings {
+	border-top: calc( var(--pb-globals-service-gap) / 2 ) solid white;
+	border-left: var(--pb-globals-service-gap) solid white;
+	border-right: var(--pb-globals-service-gap) solid white;
+}
+
+.page-id-2109 .et_pb_section.pb-service-weddings .pb-service2 {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.page-id-2109 .et_pb_section.pb-service-weddings .et_pb_row:nth-child(2) {
+	width: calc( 100% - 40px * 2 ) !important;
+}
+
+
+.page-id-2109 .et_pb_section.pb-service-weddings rs-fullwidth-wrap rs-module {
+	--n: 40px;
+}
+
+
+
+
+@media (min-width: 991px) {
+
+	.page-id-2109 .et_pb_section:not(.pb-service-weddings) .pb-row-service .et_pb_column:nth-child(1) .pb-service2 {
+		margin: calc( var(--pb-globals-service-gap) / 2) calc( var(--pb-globals-service-gap) / 2) calc( var(--pb-globals-service-gap) / 2) var(--pb-globals-service-gap);
+	}
+
+	.page-id-2109 .et_pb_section:not(.pb-service-weddings) .pb-row-service .et_pb_column:nth-child(2) .pb-service2 {
+		margin: calc( var(--pb-globals-service-gap) / 2) var(--pb-globals-service-gap) calc( var(--pb-globals-service-gap) / 2) calc( var(--pb-globals-service-gap) / 2);
+	}
+
+}
+
+
+
+/* HOME 3 */
+.page-id-2713 .pb-grid .pb-grid-item .pb-grid-item-label {
+	display: flex;
+	backdrop-filter: blur(6px);
+	border: 1px solid var(--pb-globals-color-pastel);
+	background-color: rgba(0,0,0,.2); /*white;*/
+	border-radius: var(--pb-globals-services-service-innerpad);
+	color: white;
+	flex-direction: column;
+	font-size: var(--pb-globals-font-size-small);
+	font-weight: var(--pb-globals-font-weight-600);
+	padding: 0 var(--pb-globals-services-service-innerpad) calc(var(--pb-globals-services-service-innerpad) * 2);
+	justify-content: center;
+	position: relative;
+	height: calc( var(--pb-globals-services-service-innerpad) * 4 + 40px);
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.page-id-2713 .pb-grid .pb-grid-item .pb-grid-item-label::after {
+	align-items: center;
+	background-color: var(--pb-globals-color-pastel);
+	border-radius: 0 0 var(--pb-globals-services-service-innerpad) var(--pb-globals-services-service-innerpad);
+	bottom: 0;
+	color:  white;
+	content: 'Saber Mais';
+	display: flex;
+	font-weight: var(--pb-globals-font-weight-700);
+	height: calc( var(--pb-globals-services-service-innerpad) * 2);
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: auto;
+}
+
+
+.page-id-2713 .pb-grid .pb-grid-item[style][data-id="2665"]::before {
+	background-size: 100% auto;
+}
+
+.page-id-2713 .pb-grid .pb-grid-item[style][data-id="2665"]:hover::before {
+	background-size: 120% auto;
+}
+
+@media (min-width: 768px) {
+
+	.page-id-2713 .pb-grid .pb-grid-item:last-child {
+		--service-h: calc( var(--service-w) / 2);
+		grid-column: 1/3;
+	}
+
+	.page-id-2713 .pb-grid .pb-grid-item[style]:last-child::after,
+	.page-id-2713 .pb-grid .pb-grid-item[style]:last-child::before {
+		height: calc( var(--service-h) + var(--sliderh) + var(--pb-globals-services-service-pad) );
+	}
+
+	.page-id-2713 .pb-grid .pb-grid-item:last-child .pb-grid-item-label  {
+		width: calc( var(--service-w) - var( --pb-globals-services-service-pad ) * 2 );
+	}
+
+	.page-id-2713 #service-weddings-video-holder {
+		margin: auto;
+		width: calc( 100% - var(--pb-globals-services-gap) * 2 - var( --pb-globals-services-service-pad ) * 2 );
+	}
+
+}

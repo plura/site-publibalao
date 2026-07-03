@@ -1,0 +1,204 @@
+/*
+ Theme Name:     Plura Custom Divi Theme
+ Theme URI:      http://plura.pt/
+ Description:    Plura Custom Divi Theme
+ Author:         Plura
+ Author URI:     http://plura.pt  
+ Template:       Divi
+ Version:        1.0.8 
+*/
+  
+ 
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+
+
+
+
+/* MAP:  HOME / CONTACTOS */
+:is(.wpmlobj-id-2065, .wpmlobj-id-2851, .wpmlobj-id-5639) #map-holder > div[id^="pb-locations-map"] {
+	min-height: 400px;
+}
+
+
+/* GRID Common */
+.pb-grid .pb-grid-item[style][data-id="2665"]::before {
+	background-size: 100% auto;
+}
+
+.pb-grid .pb-grid-item[style][data-id="2665"]:hover::before {
+	background-size: 120% auto;
+}
+
+
+
+
+/* PUB SERVICES Services */ 
+.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"] {
+	--grid-item-h: calc( var(--grid-item-w) * 2 / 3 );
+}
+
+.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[style][data-id="2666"]::before {
+	background-size: 100% auto;
+}
+
+.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[style][data-id="2666"]:hover::before {
+	background-size: 120% auto;
+}
+
+.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[style][data-id="2666"] .pb-grid-item-label ul {
+	font-size: var(--pb-globals-font-size-h5);
+	font-weight: var(--pb-globals-font-weight-bold);
+	max-width: 270px;
+	padding: 0 0 30px;
+	text-align: left;  
+}
+
+.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[style][data-id="2666"] .pb-grid-item-label ul li {
+	list-style: none;
+}
+
+.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[style][data-id="2666"] .pb-grid-item-label ul li::before {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;	
+}
+
+.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[style][data-id="2666"] .pb-grid-item-label ul li::before {
+	content: "\f058";
+	font-family: "Font Awesome 5 Free";
+	font-size: 1rem;
+	font-weight: 900;
+	margin-right: 10px;
+}
+
+.pb-pub #service-weddings-video-holder {
+	--pb-globals-services-gap: 4px;
+	--coln: 1;
+	--grid-item-w: calc( ( var(--w) - var(--pb-globals-services-gap) * ( var(--coln) + 1 ) ) / var(--coln) );
+	width: calc( var(--grid-item-w) - var(--pb-globals-services-service-pad) * 2 );
+}
+
+@media (max-width: 767px) {
+
+	.pb-pub #service-weddings-video-holder {
+		margin: 0 auto;
+	}
+
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"][style]::after,
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"][style]::before {
+		height: calc( var(--grid-item-w) + var(--sliderh) + var(--pb-globals-services-service-pad) );
+		width: calc( var(--w) - var(--pb-globals-services-gap) * var(--coln) );
+	}
+
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"][style]::before {
+		background-size: auto 100%;
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"][style]::after,
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"][style]::before {
+		left: 0;
+		width: calc( var(--w) - var(--pb-globals-services-gap) * var(--coln) );
+	}
+
+	.pb-pub #service-weddings-video-holder {
+		--coln: 2;
+		--grid-item-h: var(--grid-item-w); 
+
+		bottom: calc( ( var(--grid-item-h) - var(--sliderh) ) / 2 );
+		right: calc( var(--pb-globals-services-gap) + var(--pb-globals-services-service-pad) );
+		position: absolute;
+	}
+
+}
+
+@media (max-width: 990px) {
+
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"] .pb-grid-item-title {
+		font-size: 0;
+	}
+
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"] .pb-grid-item-title::before {
+		content: 'Casamentos';
+		font-size: var(--pb-globals-font-size-h2);
+	}
+
+}
+
+@media (min-width: 991px) {
+
+	.pb-pub .pb-grid:not([data-layout]) .pb-grid-item[data-id="2666"] {
+		aspect-ratio: unset;
+		height: var(--grid-item-h);
+	}
+
+	.pb-pub #service-weddings-video-holder {
+		--grid-item-h: calc( var(--grid-item-w) * 2 / 3 );
+	}
+
+}
+
+
+
+
+/* PACKAGES & SERVICES */
+.wpmlobj-id-2869 .pb-pub .pb-grid:not([data-layout]) .pb-grid-item:nth-child( 1 ) {
+	padding-top:  calc( var(--pb-globals-services-service-pad) * 2 );
+}
+
+@media (min-width: 768px) {
+
+	.wpmlobj-id-2869 .pb-pub .pb-grid:not([data-layout]) .pb-grid-item:nth-child(-n + 2) {
+		padding-top:  calc( var(--pb-globals-services-service-pad) * 2 );
+	}
+
+}
+
+
+
+
+
+/* PACKAGES */
+#popmake-2290 form.wpcf7-form label[for="pb-user-package"] {
+	width: calc( (100% - var(--s)) * 1 / 6);  
+}
+
+#popmake-2290 form.wpcf7-form .wpcf7-form-control-wrap.user_package {
+	width: calc( (100% - var(--s)) * 5 / 6);  
+}
+
+#popmake-2290 form.wpcf7-form .wpcf7-form-control-wrap.user-extras::before {
+	content: 'Extras';
+	display: block;   
+	font-weight: 500;   
+	margin-bottom: calc( var(--s) / 4 );   
+}
+
+
+/* CONTACTOS (FIBAQ e Publibalao) */
+:is(.wpmlobj-id-2065, .wpmlobj-id-5639) #main-content .pb-social-icons a {
+	color:  var(--pb-globals-color-pastel);
+	border-color: var(--pb-globals-color-pastel);
+}
+ 
+
+
+/* FIBAQ */
+
+
+/* fibaq 2022 */
+.wpmlobj-id-4823 .pb-team-member img[src*="Maria-Luisa-Cabanero"] {
+	object-position: right;  
+}
+
+.wpmlobj-id-4823 .pb-team-member img[src*="Josep-Maria-llado"] {
+	object-position: left;  
+}
+

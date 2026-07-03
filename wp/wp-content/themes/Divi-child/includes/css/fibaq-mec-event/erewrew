@@ -1,0 +1,63 @@
+  .single-mec-events.mec-category-id-74 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+			input:is(
+				[name="book[tickets][0][reg][27]"], /* billing - vat */
+		
+				[name="book[tickets][0][reg][26]"], /* responsible adult name */
+				[name="book[tickets][0][reg][28]"], [name="book[tickets][0][reg][32]"], /* responsible adult vat */
+		
+				[name="book[tickets][0][reg][29]"] /* emergency contact */
+			),
+
+			select:is(
+				[name="book[tickets][0][reg][31]"] /* parenthood */
+			)
+		
+		) {
+    --coln: 2;
+  }
+
+  .single-mec-events.mec-category-id-74 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+			input:is(
+				[name="book[tickets][0][email]"],
+				[name="book[tickets][0][reg][2]"], /* tel */
+				[name="book[tickets][0][reg][14]"] /* age */
+			)
+		) {
+    --coln: 3;
+  }
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  .single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+    input:is(
+		[name="book[tickets][0][name]"], /* billing - name */
+		[name="book[tickets][0][reg][26]"], /* billing - vat */
+
+        [name="book[tickets][0][reg][14]"], /* age */
+        [name="book[tickets][0][reg][15]"], /* weight */
+        [name="book[tickets][0][email]"], /* email */
+        [name="book[tickets][0][reg][2]"], /* telefone */
+
+		/* donation receipt */
+		[name="book[tickets][0][reg][24]"], /* donation billing - name */
+        [name="book[tickets][0][reg][25]"] /* donation billing - vat */
+    )
+    ) {
+    --coln: 2;
+  }
+}
+
+
+
+.single-mec-events.mec-category-id-74 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][26]"] ) )::after {
+	content: var(--pb-mec-alert-text-responsible-adult-pt);
+	white-space: pre-line;   /* or: pre-wrap */
+	display: block;
+}
+
+.wpml-lang-en.single-mec-events.mec-category-id-80 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][26]"] ) )::after {
+	content: var(--pb-mec-alert-text-responsible-adult-en);
+}

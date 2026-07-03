@@ -1,0 +1,16 @@
+{
+    "name": "publibalao.com",
+    "host": "",
+    "protocol": "ftp",
+    "port": 21,
+    "username": "",
+    "password": "",
+    "remotePath": "/public_html/",
+    "uploadOnSave": false,
+    "useTempFile": false,
+    "openSsh": false,
+    "syncMode": "full",
+    "syncOption": {
+        "delete": true
+    }
+}

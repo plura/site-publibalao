@@ -1,0 +1,22 @@
+header #pb-menu-fibaq.pb-invert .et_pb_menu__logo::before {
+	background-image: url('https://publibalao.com/wp/wp-content/uploads/2021/10/Festivalbaloes_3.svg');
+}
+
+
+.wpmlobj-id-3206 header #pb-menu-fibaq.pb-invert .et_pb_menu__logo::before {
+	opacity: 0;
+}
+
+
+/* PROGRAM */
+@media (max-width: 767px) {
+
+	.wpmlobj-id-3775 .wp-block-flexible-table-block-table {
+		font-size: .75rem !important;
+	}
+
+	.wpmlobj-id-3775 .wp-block-flexible-table-block-table table tr td {
+		border-width: 3px !important;
+	}
+
+}

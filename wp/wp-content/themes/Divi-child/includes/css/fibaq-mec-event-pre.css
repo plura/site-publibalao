@@ -1,0 +1,7 @@
+.archive.tax-mec_category #main-content {
+    min-height: 100dvh;
+}
+
+.archive.tax-mec_category :is(h1, .mec-wrap) {
+    display: none;
+}

@@ -1,0 +1,74 @@
+.et_pb_menu .et_pb_menu__menu > nav > .et-menu  > .menu-item > a {
+	padding: 30px 0 15px !important;
+}
+
+header .et_pb_menu .et_pb_menu__wrap {
+	justify-content: flex-end !important;
+}
+
+header .et_pb_menu__logo {
+	position: relative;
+}
+
+
+/*
+header #pb-menu-main .et_pb_menu__logo::before {
+	background: transparent url('https://publibalao.com/wp/wp-content/uploads/2021/10/PubliBalao_2.png') center/contain no-repeat;
+	content: '';
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+	transition:	visibility 0s linear 1s, opacity 1s ease-out;
+	width: 100%;
+}
+
+header .has_et_pb_sticky #pb-menu-main .et_pb_menu.pb-invert .et_pb_menu__logo::before {
+	opacity: 1;
+	transition-delay: 0s;
+	visibility: visible;
+}*/
+
+
+/* invert */
+header .et_pb_menu.pb-invert .et_pb_menu__logo::before {
+	background: transparent url('https://publibalao.com/wp/wp-content/uploads/2021/10/Logo_PubliBalao_1.svg') center/contain no-repeat;
+	content: '';
+	height: 100%;
+	left: 0;
+	opacity: 1;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	visibility: visible;
+	width: 100%;
+}
+
+header > div.has_et_pb_sticky .et_pb_menu.pb-invert .et_pb_menu__logo::before {
+	opacity: 0;
+	visibility: hidden;  
+}
+
+header .et_pb_menu.pb-invert .et_pb_menu__logo::before,
+header .et_pb_menu.pb-invert .et_pb_menu__logo img {
+	transition:	visibility 0s linear 1s, opacity 1s ease-out;	
+}
+
+header > div:not(.has_et_pb_sticky) .et_pb_menu.pb-invert .et_pb_menu__logo::before,
+header > div.has_et_pb_sticky .et_pb_menu.pb-invert .et_pb_menu__logo img {
+	transition-delay: 0s;
+}
+
+
+header .et_pb_menu.pb-invert .et_pb_menu__logo img {
+	opacity: 0;
+	visibility: hidden;
+}
+
+header > div.has_et_pb_sticky .et_pb_menu.pb-invert .et_pb_menu__logo img {
+	opacity: 1;
+	visibility: visible;
+}

@@ -1,0 +1,357 @@
+/**
+ *	. Layout
+ *		- Button
+ *  . ME Calendar
+ *	. WP Nav
+ *
+ */
+
+:root {
+  /* Colors */
+  --pb-globals-color-pastel: #f36d61;
+  --pb-globals-color-grey: #6b7280;
+
+  /* Spacing */
+  --pb-gap: 10px;
+
+  /* Fluid font sizes */
+  --pb-globals-font-size-body: clamp(14px, 1vw + 12px, 18px);
+  --pb-globals-font-size-h1: clamp(32px, 4vw, 52px);
+  --pb-globals-font-size-h2: clamp(26px, 3vw, 42px);
+  --pb-globals-font-size-h3: clamp(22px, 2.3vw, 32px);
+  --pb-globals-font-size-h4: clamp(18px, 1.6vw, 22px);
+  --pb-globals-font-size-h5: clamp(14px, 1.1vw, 16px);
+  --pb-globals-font-size-h6: clamp(12px, 0.9vw, 14px);
+  --pb-globals-font-size-small: clamp(10px, 0.8vw, 12px);
+  --pb-globals-font-size-xsmall: clamp(9px, 0.6vw, 10px);
+
+  /* Line-heights */
+  --pb-globals-line-height-body: 1.6;
+  --pb-globals-line-height-h1: 1.1;
+  --pb-globals-line-height-h2: 1.15;
+  --pb-globals-line-height-h3: 1.2;
+  --pb-globals-line-height-h4: 1.25;
+  --pb-globals-line-height-h5: 1.3;
+  --pb-globals-line-height-h6: 1.35;
+  --pb-globals-line-height-small: 1.45;
+  --pb-globals-line-height-xsmall: 1.5;
+
+  /* Weights (complete scale) */
+  --pb-globals-font-weight-100: 100; /* Thin */
+  --pb-globals-font-weight-200: 200; /* Extra Light */
+  --pb-globals-font-weight-300: 300; /* Light */
+  --pb-globals-font-weight-400: 400; /* Regular */
+  --pb-globals-font-weight-500: 500; /* Medium / Semi */
+  --pb-globals-font-weight-600: 600; /* SemiBold / Bold */
+  --pb-globals-font-weight-700: 700; /* Bold */
+  --pb-globals-font-weight-800: 800; /* Extra Bold */
+  --pb-globals-font-weight-900: 900; /* Black */
+
+  /* Default heading weight (override per-level if needed) */
+  --pb-globals-heading-weight: var(--pb-globals-font-weight-800);
+}
+
+/* Base typography */
+body {
+  font-size: var(--pb-globals-font-size-body);
+  line-height: var(--pb-globals-line-height-body);
+  color: var(--pb-globals-color-grey);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--pb-globals-heading-weight);
+}
+
+h1 {
+  font-size: var(--pb-globals-font-size-h1);
+  line-height: var(--pb-globals-line-height-h1);
+}
+
+h2 {
+  font-size: var(--pb-globals-font-size-h2);
+  line-height: var(--pb-globals-line-height-h2);
+}
+
+h3 {
+  font-size: var(--pb-globals-font-size-h3);
+  line-height: var(--pb-globals-line-height-h3);
+}
+
+h4 {
+  font-size: var(--pb-globals-font-size-h4);
+  line-height: var(--pb-globals-line-height-h4);
+}
+
+h5 {
+  font-size: var(--pb-globals-font-size-h5);
+  line-height: var(--pb-globals-line-height-h5);
+}
+
+h6 {
+  font-size: var(--pb-globals-font-size-h6);
+  line-height: var(--pb-globals-line-height-h6);
+}
+
+/* Small text helpers */
+small {
+  font-size: var(--pb-globals-font-size-small);
+  line-height: var(--pb-globals-line-height-small);
+}
+
+.xsmall {
+  font-size: var(--pb-globals-font-size-xsmall);
+  line-height: var(--pb-globals-line-height-xsmall);
+}
+
+/* Layout List */
+.pb-no-bullets ul {
+  list-style-type: none;
+}
+
+/* Layout: Button  */
+.pb-button {
+  align-items: center;
+  background-color: var(--pb-globals-color-pastel);
+  border-radius: 3px;
+  color: white;
+  display: inline-flex;
+  font-size: var(--pb-globals-font-size-h6);
+  line-height: var(--pb-globals-line-height-h6);
+  min-height: 50px;
+  justify-content: center;
+  letter-spacing: 1px;
+  padding: 10px 40px;
+  text-transform: uppercase;
+}
+
+/* Layout: Heading Tree Nav */
+.plura-layout-heading-tree-nav-list {
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.plura-layout-heading-tree-nav-list .plura-layout-heading-tree-nav-list {
+  font-size: 10px;
+  line-height: 18px;
+}
+
+.plura-layout-heading-tree-nav-list .plura-layout-heading-tree-nav-link {
+  color: black;
+}
+
+.plura-layout-heading-tree-nav-list .plura-layout-heading-tree-nav-item {
+  list-style: none;
+}
+
+.plura-layout-heading-tree-nav-container
+  .plura-layout-heading-tree-nav-item[data-plura-layout-heading-nav-item-level="2"] {
+  --n: 2;
+}
+
+.plura-layout-heading-tree-nav-container
+  .plura-layout-heading-tree-nav-item[data-plura-layout-heading-nav-item-level="2"]
+  > .plura-layout-heading-tree-nav-container
+  .plura-layout-heading-tree-nav-item[data-plura-layout-heading-nav-item-level="3"] {
+  --n: 3;
+}
+
+.plura-layout-heading-tree-nav-container
+  .plura-layout-heading-tree-nav-item[data-plura-layout-heading-nav-item-level="4"] {
+  --n: 4;
+}
+
+.plura-layout-heading-tree-nav-container
+  .plura-layout-heading-tree-nav-item
+  > .plura-layout-heading-tree-nav-list {
+  padding-left: calc((var(--n) - 1) * 20px) !important;
+}
+
+.plura-layout-heading-tree-nav-container
+  .plura-layout-heading-tree-nav-item:is(
+    [data-plura-layout-heading-nav-item-level="2"],
+    [data-plura-layout-heading-nav-item-level="3"]
+  )
+  > .plura-layout-heading-tree-nav-link {
+  font-weight: 700;
+}
+
+/* ME CALENDAR: SINGLE EVENT */
+.single-mec-events .mec-single-event > .col-md-4 {
+  display: none;
+}
+
+/* WP Nav */
+.pb-nav {
+  display: block !important;
+}
+
+.pb-nav
+  .wp-block-navigation__responsive-container
+  .wp-block-navigation__responsive-container-content {
+  display: block;
+}
+
+.pb-nav .wp-block-navigation__container {
+  --n: 2;
+  display: grid !important;
+  gap: calc(var(--pb-gap) * 3 / 2);
+  grid-template-columns: repeat(var(--n), 1fr);
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.pb-nav .wp-block-navigation__container .wp-block-navigation-item,
+.pb-nav
+  .wp-block-navigation__container
+  .wp-block-navigation-item
+  > a.wp-block-navigation-item__content {
+  transition: all 0.4s ease-out;
+}
+
+.pb-nav .wp-block-navigation__container .wp-block-navigation-item {
+  border: 2px solid var(--pb-globals-color-pastel);
+  border-radius: calc(var(--pb-gap) * 3 / 2);
+  aspect-ratio: 1 / 1;
+}
+
+.pb-nav .wp-block-navigation__container .wp-block-navigation-item:hover {
+  background-color: var(--pb-globals-color-pastel);
+}
+
+.pb-nav
+  .wp-block-navigation__container
+  .wp-block-navigation-item
+  > a.wp-block-navigation-item__content {
+  align-content: center;
+  color: var(--pb-globals-color-pastel);
+  display: flex;
+  font-weight: 800;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  letter-spacing: 1px;
+  padding: var(--pb-gap);
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.pb-nav
+  .wp-block-navigation__container
+  .wp-block-navigation-item:hover
+  > a.wp-block-navigation-item__content {
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .pb-nav
+    :is(
+      .wp-block-navigation__responsive-container-close,
+      .wp-block-navigation__responsive-container-open
+    ) {
+    display: none;
+  }
+
+  .pb-nav .wp-block-navigation__responsive-container {
+    display: block;
+    position: relative;
+  }
+
+  .pb-nav
+    .wp-block-navigation__container
+    .wp-block-navigation-item
+    > a.wp-block-navigation-item__content {
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 768px) {
+  .pb-nav .wp-block-navigation__container {
+    --n: 3;
+    gap: calc(var(--pb-gap) * 2);
+  }
+}
+
+@media (min-width: 991px) {
+  .pb-nav .wp-block-navigation__container {
+    --n: 4;
+    gap: calc(var(--pb-gap) * 3);
+  }
+}
+
+@media (min-width: 1200px) {
+  .pb-nav .wp-block-navigation__container {
+    --n: 5;
+  }
+}
+
+
+
+
+/* Teams and Pilots */
+.plura-wp-posts.pb-participants-list .plura-wp-post {
+  align-items: center;
+}
+
+.plura-wp-posts.pb-participants-list .plura-wp-post .plura-wp-post-featured-image {
+  aspect-ratio: 4 / 5;
+  border-radius: calc(var(--plura-wp-posts-gap) / 6);
+  object-fit: cover;
+}
+
+.plura-wp-posts.pb-participants-list .plura-wp-post .plura-wp-post-title {
+  font-size: var(--pb-globals-font-size-h5);
+  line-height: var(--pb-globals-line-height-h5);
+  padding-bottom: 0;
+}
+
+.plura-wp-posts.pb-participants-list .plura-wp-post :is(.plura-wp-post-meta, .pb-team-nr) {
+  font-size: var(--pb-globals-font-size-small);
+  line-height: var(--pb-globals-line-height-small);
+}
+
+.plura-wp-posts.pb-participants-list .plura-wp-post .pb-team-nr {
+  font-weight: var(--pb-globals-font-weight-700);
+}
+
+
+.plura-wp-posts.pb-participants-list .plura-wp-post .plura-wp-post-meta-item[data-type="country"] .plura-wp-post-meta-item-value {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}
+
+.plura-wp-posts.pb-participants-list .plura-wp-post .plura-wp-post-meta-item[data-type="country"] .plura-wp-post-meta-item-value img {
+    height: 12px;
+}
+
+
+
+/* order */
+.plura-wp-posts.pb-participants-list .plura-wp-post .pb-team-nr {
+    order: 1;
+}
+
+.plura-wp-posts.pb-participants-list .plura-wp-post .plura-wp-post-title {
+  order: 2;
+}
+
+.plura-wp-posts.pb-participants-list .plura-wp-post .plura-wp-post-meta {
+  order: 3;
+}
+
+.plura-wp-posts.pb-participants-list.pb-invert :is(.plura-wp-post-title, .plura-wp-post-meta, .pb-team-nr) {
+	color: white;
+}
+
+
+@media (min-width: 1200px) {
+  .plura-wp-posts.pb-participants-list {
+    --plura-wp-posts-cols: 6;
+  }
+}

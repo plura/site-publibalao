@@ -1,0 +1,74 @@
+.single-mec-events .mec-book-tickets-reg-fields-container {
+	--pb-mec-alert-font-weight: bold;
+	--pb-mec-alert-font-size: x-small;
+	--pb-mec-alert-line-height: bold;
+
+	--pb-mec-alert-text-age-limit-adult-pt: "O registo é apenas permitido a maiores de 18 anos"; 
+	--pb-mec-alert-text-age-limit-adult-en: "Registration is only allowed for individuals over 18 years old";
+
+	--pb-mec-alert-text-age-limit-pt: "Limite de idade: a partir dos 6 anos";
+	--pb-mec-alert-text-age-limit-en: "Age limit: from 6 years old";	
+
+	--pb-mec-alert-text-responsible-adult-pt: "Preencher em caso de inscrição de menor de idade \A Adulto responsável deverá ter reserva voo cativo";
+	--pb-mec-alert-text-responsible-adult-en: "Fill in if registering a minor \A Responsible adult must have confirmed flight";
+
+	--pb-mec-alert-text-donation-pt: "Caso pretenda Recibo de Donativo, preencha os 2 campos abaixo.";
+	--pb-mec-alert-text-donation-en: "If you want a Donation Receipt, please fill in the 2 fields below.";
+}
+
+
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"] {
+	--coln: 1;
+	--pb-mec-field-section-pad: 30px;
+	--pb-mec-field-section-border-width: calc( 100% * var(--coln) + var(--gap) * (var(--coln) - 1) );
+	--pb-mec-field-section-top-pos: calc( (var(--gap) / 3) * 2);
+}
+
+
+
+.single-mec-events .mec-book-tickets-reg-fields-container {
+  --gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"] {
+  margin: 0 !important;
+  width: calc((100% - var(--gap) * (var(--coln) - 1)) / var(--coln)) !important;
+}
+
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]::after,
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]::before {
+	font-size: var(--pb-mec-alert-font-size);
+	font-weight: var(--pb-mec-alert-font-weight);
+}
+
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]::after {
+  display: block;
+  line-height: 1.8;
+  margin-top: 5px;
+}
+
+/* FIBAQ 2025 - Global Form - Alerts */
+/* age */
+/* .single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][14]"] ) )::after {
+  content: var(--pb-mec-alert-text-age-limit-adult-pt);
+}
+
+.wpml-lang-en.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][14]"] ) )::after {
+  content: var(--pb-mec-alert-text-age-limit-adult-en);
+} */
+
+
+/* .single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( input:is([name="book[tickets][0][reg][24]"] ) )::after {
+    background: #efefef;
+    content: '';
+    height: 1px;
+    margin: 0;
+    top: calc(var(--pad) * -1);
+    width: var(--pb-mec-field-section-border-width);
+} */
+
+
+

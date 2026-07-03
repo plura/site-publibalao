@@ -1,0 +1,129 @@
+.single-mec-events .mec-book-tickets-reg-fields-container {
+  --pb-mec-alert-font-weight: bold;
+  --pb-mec-alert-font-size: x-small;
+  --pb-mec-alert-line-height: bold;
+}
+
+.single-mec-events .mec-book-tickets-reg-fields-container {
+  --gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.single-mec-events
+  .mec-book-tickets-reg-fields-container
+  > [class*="mec-book-field-"] {
+  --coln: 1;
+  margin: 0 !important;
+  width: calc((100% - var(--gap) * (var(--coln) - 1)) / var(--coln)) !important;
+}
+
+.single-mec-events
+  .mec-book-tickets-reg-fields-container
+  > [class*="mec-book-field-"]:has([name="book[tickets][0][name]"]) {
+  width: 100% !important;
+}
+
+
+.single-mec-events
+  .mec-book-tickets-reg-fields-container
+  > [class*="mec-book-field-"]::after,
+.single-mec-events
+  .mec-book-tickets-reg-fields-container
+  > [class*="mec-book-field-"]::before {
+  font-size: var(--pb-mec-alert-font-size);
+  font-weight: var(--pb-mec-alert-font-weight);
+}
+
+.single-mec-events
+  .mec-book-tickets-reg-fields-container
+  > [class*="mec-book-field-"]::after {
+    display: block;
+    line-height: 1.8;
+    margin-top: 5px;
+ }
+
+
+
+
+/* FIBAQ 2025 - Global Form */
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		[name="book[tickets][0][reg][24]"], /* billing - name */
+        [name="book[tickets][0][reg][25]"] /* billing - vat */
+	) {
+  --pad: calc(var(--gap) / 3);
+  padding: calc(var(--pad) * 2) 0 0;
+}
+
+@media screen and (min-width: 768px) {
+  .single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+    input:is(
+		[name="book[tickets][0][name]"], /* billing - name */
+		[name="book[tickets][0][reg][26]"], /* billing - vat */
+
+        [name="book[tickets][0][reg][14]"], /* age */
+        [name="book[tickets][0][reg][15]"], /* weight */
+        [name="book[tickets][0][email]"], /* email */
+        [name="book[tickets][0][reg][2]"], /* telefone */
+
+		/* donation receipt */
+		[name="book[tickets][0][reg][24]"], /* billing - name */
+        [name="book[tickets][0][reg][25]"] /* billing - vat */
+    )
+    ) {
+    --coln: 2;
+  }
+}
+
+/* FIBAQ 2025 - Global Form - Alerts */
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+    input:is(
+		[name="book[tickets][0][reg][14]"], /* age */
+    )
+)::after {
+  content: "O registo é apenas permitido a maiores de 18";
+}
+
+.single-mec-events
+  .mec-book-tickets-reg-fields-container
+  > [class*="mec-book-field-"]:has(
+    input:is([name="book[tickets][0][reg][24]"], )
+  )::before {
+  content: "Caso pretenda Recibo de Donativo, preencha os 2 campos abaixo.";
+  display: block;
+  position: absolute;
+  border-top: 1px solid #efefef;
+  display: block;
+  top: calc(var(--pad) * -1);
+  white-space: nowrap; 
+  z-index: auto;
+}
+
+/* FIBAQ 2025 - Global Form - Cativo */
+.single-mec-events.mec-category-id-74 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+    input:is(
+		[name="book[tickets][0][reg][14]"], /* age */
+    )
+)::after {
+  content: "Limite de idade: a partir dos 6 anos";
+}
+
+.single-mec-events.mec-category-id-74 
+.mec-book-tickets-reg-fields-container 
+> [class*="mec-book-field-"]:has(input:is([name="book[tickets][0][reg][26]"]))::after {
+  content: "Preencher em caso de inscrição de menor de idade \A Adulto responsável deverá ter reserva voo cativo";
+  white-space: pre-line;   /* or: pre-wrap */
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+
+.single-mec-events.mec-category-id-74 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+    input:is(
+		[name="book[tickets][0][reg][26]"], /* responsible adult */
+    )
+    ) {
+    --coln: 2;
+  }
+}

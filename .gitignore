@@ -1,0 +1,5 @@
+sftp-config.json
+.vscode/sftp.json
+!.vscode/sftp.json.example
+wp/wp-config.php
+.backup/

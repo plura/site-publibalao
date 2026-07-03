@@ -1,0 +1,252 @@
+/* SECTIONS */
+
+
+/* Donation Section (Global + Captive) - name + vat */
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][24]"], [name="book[tickets][0][reg][25]"] ),
+
+/* Responsible Adult */
+.single-mec-events:is(.postid-15004, .wpml-lang-en.postid-15238) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][31]"] ),
+.single-mec-events:is(.postid-14764, .wpml-lang-en.postid-15240) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][26]"] ),
+.single-mec-events:is(.postid-14763, .wpml-lang-en.postid-15246) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] ),
+.single-mec-events:is(.postid-14762, .wpml-lang-en.postid-15247) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] ),
+.single-mec-events:is(.postid-14761, .wpml-lang-en.postid-15248) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] ),
+.single-mec-events:is(.postid-14759, .wpml-lang-en.postid-15249) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] ) {
+	padding: var(--pb-mec-field-section-pad) 0 0;
+}
+
+/* donation */
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][24]"] )::before,
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][24]"] )::after,
+/* responsible adult */
+.single-mec-events:is(.postid-15004, .wpml-lang-en.postid-15238) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][31]"] )::before,
+.single-mec-events:is(.postid-15004, .wpml-lang-en.postid-15238) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][31]"] )::after,
+.single-mec-events:is(.postid-14764, .wpml-lang-en.postid-15240) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][26]"] )::before,
+.single-mec-events:is(.postid-14764, .wpml-lang-en.postid-15240) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][26]"] )::after,
+.single-mec-events:is(.postid-14763, .wpml-lang-en.postid-15246) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events:is(.postid-14763, .wpml-lang-en.postid-15246) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::after,
+.single-mec-events:is(.postid-14762, .wpml-lang-en.postid-15247) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events:is(.postid-14762, .wpml-lang-en.postid-15247) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::after,
+.single-mec-events:is(.postid-14761, .wpml-lang-en.postid-15248) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events:is(.postid-14761, .wpml-lang-en.postid-15248) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::after,
+.single-mec-events:is(.postid-14759, .wpml-lang-en.postid-15249) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events:is(.postid-14759, .wpml-lang-en.postid-15249) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::after {
+    position: absolute;
+    z-index: auto;
+}
+
+
+/* donation */
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is([name="book[tickets][0][reg][24]"] ) )::before,
+/* responsible adult */
+.single-mec-events:is(.postid-15004, .wpml-lang-en.postid-15238) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][31]"] )::before,
+.single-mec-events:is(.postid-14764, .wpml-lang-en.postid-15240) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][26]"] )::before,
+.single-mec-events:is(.postid-14763, .wpml-lang-en.postid-15246) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events:is(.postid-14762, .wpml-lang-en.postid-15247) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events:is(.postid-14761, .wpml-lang-en.postid-15248) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events:is(.postid-14759, .wpml-lang-en.postid-15249) [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before  {
+	display: block;
+	top: 0;
+	white-space: nowrap;
+}
+
+/* donation */
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is([name="book[tickets][0][reg][24]"] ) )::before {
+	content: var(--pb-mec-alert-text-donation-pt);
+}
+.wpml-lang-en.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is([name="book[tickets][0][reg][24]"] ) )::before {
+	content: var(--pb-mec-alert-text-donation-en);
+}
+
+/* responsible adult */
+.single-mec-events.postid-15004 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][31]"] )::before,
+.single-mec-events.postid-14764 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][26]"] )::before,
+.single-mec-events.postid-14763 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events.postid-14762 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events.postid-14761 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.single-mec-events.postid-14759 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before {
+  content: var(--pb-mec-alert-text-responsible-adult-pt);
+}
+.wpml-lang-en.single-mec-events.postid-15238 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][31]"] )::before,
+.wpml-lang-en.single-mec-events.postid-15240 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][26]"] )::before,
+.wpml-lang-en.single-mec-events.postid-15246 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.wpml-lang-en.single-mec-events.postid-15247 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.wpml-lang-en.single-mec-events.postid-15248 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before,
+.wpml-lang-en.single-mec-events.postid-15249 [class*="mec-book-field-"]:has( [name="book[tickets][0][reg][28]"] )::before {
+  content: var(--pb-mec-alert-text-responsible-adult-en);
+}
+ 
+ 
+
+/* FIBAQ 2025 Booking Forms - Global */
+
+/* age */
+.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][14]"] ) )::after {
+  content: var(--pb-mec-alert-text-age-limit-adult-pt);
+}
+.wpml-lang-en.single-mec-events .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][14]"] ) )::after {
+  content: var(--pb-mec-alert-text-age-limit-adult-en);
+}
+
+ 
+/* FIBAQ 2025 Booking Forms - Captive */
+
+/* age */
+.single-mec-events.mec-category-id-74 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][14]"] ) )::after {
+  	content: var(--pb-mec-alert-text-age-limit-pt);
+}
+
+.wpml-lang-en.single-mec-events.mec-category-id-80 .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has( :is( [name="book[tickets][0][reg][14]"] ) )::after {
+	content: var(--pb-mec-alert-text-age-limit-en);
+}
+
+
+/* responsible adult */
+
+
+
+@media screen and (min-width: 768px) {
+
+	/* FIBAQ 2025 Booking Forms - Global: Cols */
+	.single-mec-events:is(.mec-category-id-78, .wpml-lang-en.mec-category-id-79) .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		:is(
+			[name="book[tickets][0][name]"], /* name */
+			[name="book[tickets][0][email]"], /* email */
+
+			[name="book[tickets][0][reg][26]"], /* billing - vat */
+			[name="book[tickets][0][reg][2]"],  /* telephone */
+			[name="book[tickets][0][reg][14]"], /* age */
+			[name="book[tickets][0][reg][15]"], /* weight */
+
+			/* donation receipt */
+			[name="book[tickets][0][reg][24]"], /* donation billing - name */
+			[name="book[tickets][0][reg][25]"] /* donation billing - vat */
+		)
+	),
+
+	/* FIBAQ 2025 Booking Forms - Captive: Cols */
+
+	/* Alter do Chão */
+	.single-mec-events:is(.mec-category-id-74.postid-15004, .wpml-lang-en.mec-category-id-80.postid-15238) .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		:is(
+			[name="book[tickets][0][name]"], /* billing - name */
+			[name="book[tickets][0][reg][26]"], /* billing - vat */
+
+			[name="book[tickets][0][email]"],
+			[name="book[tickets][0][reg][2]"], /* tel */
+			[name="book[tickets][0][reg][14]"], /* age */
+			[name="book[tickets][0][reg][34]"], /* emergency contact */
+
+			/*[name="book[tickets][0][reg][31]"],*/ /* responsible adult name */
+			[name="book[tickets][0][reg][32]"], /* responsible adult vat */
+			[name="book[tickets][0][reg][33]"], /* responsible adult parenthood */
+
+			/* donation receipt */
+			[name="book[tickets][0][reg][24]"], /* donation billing - name */
+			[name="book[tickets][0][reg][25]"] /* donation billing - vat */
+		)
+	),
+
+	/* Fronteira */
+	.single-mec-events:is(.mec-category-id-74.postid-14764, .wpml-lang-en.mec-category-id-80.postid-15240) .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		:is(
+			[name="book[tickets][0][name]"], /* billing - name */
+			[name="book[tickets][0][reg][27]"], /* billing - vat */
+
+			[name="book[tickets][0][email]"],
+			[name="book[tickets][0][reg][2]"], /* tel */
+			[name="book[tickets][0][reg][14]"], /* age */
+			[name="book[tickets][0][reg][32]"], /* emergency contact */
+
+			/*[name="book[tickets][0][reg][26]"],*/ /* responsible adult name */
+			[name="book[tickets][0][reg][28]"], /* responsible adult vat */
+			[name="book[tickets][0][reg][31]"], /* responsible adult parenthood */
+
+			/* donation receipt */
+			[name="book[tickets][0][reg][24]"], /* donation billing - name */
+			[name="book[tickets][0][reg][25]"] /* donation billing - vat */
+		)
+	),
+	/* Monforte */
+	.single-mec-events:is(.mec-category-id-74.postid-14763, .wpml-lang-en.mec-category-id-80.postid-15246) .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		:is(
+			[name="book[tickets][0][name]"], /* billing - name */
+			[name="book[tickets][0][reg][27]"], /* billing - vat */
+
+			[name="book[tickets][0][email]"],
+			[name="book[tickets][0][reg][2]"], /* tel */
+			[name="book[tickets][0][reg][14]"], /* age */
+			[name="book[tickets][0][reg][32]"], /* emergency contact */
+
+			/*[name="book[tickets][0][reg][28]"],*/ /* responsible adult name */
+			[name="book[tickets][0][reg][29]"], /* responsible adult vat */
+			[name="book[tickets][0][reg][31]"], /* responsible adult parenthood */
+
+			/* donation receipt */
+			[name="book[tickets][0][reg][24]"], /* donation billing - name */
+			[name="book[tickets][0][reg][25]"] /* donation billing - vat */
+		)
+	),
+	/* Fundação Abreu Callado */
+	.single-mec-events:is(.mec-category-id-74.postid-14762, .wpml-lang-en.mec-category-id-80.postid-15247) .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		:is(
+			[name="book[tickets][0][name]"], /* billing - name */
+			[name="book[tickets][0][reg][27]"], /* billing - vat */
+
+			[name="book[tickets][0][email]"],
+			[name="book[tickets][0][reg][2]"], /* tel */
+			[name="book[tickets][0][reg][14]"], /* age */
+			[name="book[tickets][0][reg][31]"], /* emergency contact */
+			
+			/*[name="book[tickets][0][reg][28]"],*/ /* responsible adult name */
+			[name="book[tickets][0][reg][29]"], /* responsible adult vat */
+			[name="book[tickets][0][reg][30]"], /* responsible adult parenthood */
+
+			/* donation receipt */
+			[name="book[tickets][0][reg][24]"], /* donation billing - name */
+			[name="book[tickets][0][reg][25]"] /* donation billing - vat */
+		)
+	),
+	/* Montargil */
+	.single-mec-events:is(.mec-category-id-74.postid-14761, .wpml-lang-en.mec-category-id-80.postid-15248) .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		:is(
+			[name="book[tickets][0][name]"], /* billing - name */
+			[name="book[tickets][0][reg][27]"], /* billing - vat */
+
+			[name="book[tickets][0][email]"],
+			[name="book[tickets][0][reg][2]"], /* tel */
+			[name="book[tickets][0][reg][14]"], /* age */
+			[name="book[tickets][0][reg][31]"], /* emergency contact */
+
+			/*[name="book[tickets][0][reg][28]"],*/ /* responsible adult name */
+			[name="book[tickets][0][reg][29]"], /* responsible adult vat */
+			[name="book[tickets][0][reg][30]"], /* responsible adult parenthood */
+
+			/* donation receipt */
+			[name="book[tickets][0][reg][24]"], /* donation billing - name */
+			[name="book[tickets][0][reg][25]"] /* donation billing - vat */
+		)
+	),
+	/* Ponte de Sor */
+	.single-mec-events:is(.mec-category-id-74.postid-14759, .wpml-lang-en.mec-category-id-80.postid-15249) .mec-book-tickets-reg-fields-container > [class*="mec-book-field-"]:has(
+		:is(
+			[name="book[tickets][0][name]"], /* billing - name */
+			[name="book[tickets][0][reg][27]"], /* billing - vat */
+
+			[name="book[tickets][0][email]"],
+			[name="book[tickets][0][reg][2]"], /* tel */
+			[name="book[tickets][0][reg][14]"], /* age */
+			[name="book[tickets][0][reg][31]"], /* emergency contact */
+
+			/*[name="book[tickets][0][reg][28]"],*/ /* responsible adult name */
+			[name="book[tickets][0][reg][29]"], /* responsible adult vat */
+			[name="book[tickets][0][reg][30]"], /* responsible adult parenthood */
+
+			/* donation receipt */
+			[name="book[tickets][0][reg][24]"], /* donation billing - name */
+			[name="book[tickets][0][reg][25]"] /* donation billing - vat */
+		)
+	) {
+	--coln: 2;
+	}
+
+}
