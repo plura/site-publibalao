@@ -4,7 +4,7 @@ WordPress site repo for [publibalao.com](https://publibalao.com). Only custom-de
 
 ## Structure
 
-- `theme/` — Divi child theme, synced to `/public_html/wp/wp-content/themes/Divi-child/`
+- `theme/` — Divi child theme, synced to `/public_html/wp/wp-content/themes/publibalao/`
 - `plugin/` — custom Publibalão plugin, synced to `/public_html/wp/wp-content/plugins/publibalao/`
 - `languages/` — translation files for third-party plugins, synced to `/public_html/wp/wp-content/languages/plugins/`
 - `other-plugins/` — third-party plugins (modern-events-calendar, revslider), kept locally for reference only; not tracked or synced

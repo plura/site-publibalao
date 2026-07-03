@@ -7,7 +7,7 @@
         "port": 21,
         "username": "",
         "password": "",
-        "remotePath": "/public_html/wp/wp-content/themes/Divi-child",
+        "remotePath": "/public_html/wp/wp-content/themes/publibalao",
         "uploadOnSave": false,
         "useTempFile": false,
         "openSsh": false,
