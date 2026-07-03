@@ -1,16 +1,53 @@
-{
-    "name": "publibalao.com",
-    "host": "",
-    "protocol": "ftp",
-    "port": 21,
-    "username": "",
-    "password": "",
-    "remotePath": "/public_html/",
-    "uploadOnSave": false,
-    "useTempFile": false,
-    "openSsh": false,
-    "syncMode": "full",
-    "syncOption": {
-        "delete": true
+[
+    {
+        "name": "publibalao.com - theme",
+        "context": "theme",
+        "host": "",
+        "protocol": "ftp",
+        "port": 21,
+        "username": "",
+        "password": "",
+        "remotePath": "/public_html/wp/wp-content/themes/Divi-child",
+        "uploadOnSave": false,
+        "useTempFile": false,
+        "openSsh": false,
+        "syncMode": "full",
+        "syncOption": {
+            "delete": true
+        }
+    },
+    {
+        "name": "publibalao.com - plugin",
+        "context": "plugin",
+        "host": "",
+        "protocol": "ftp",
+        "port": 21,
+        "username": "",
+        "password": "",
+        "remotePath": "/public_html/wp/wp-content/plugins/publibalao",
+        "uploadOnSave": false,
+        "useTempFile": false,
+        "openSsh": false,
+        "syncMode": "full",
+        "syncOption": {
+            "delete": true
+        }
+    },
+    {
+        "name": "publibalao.com - languages",
+        "context": "languages",
+        "host": "",
+        "protocol": "ftp",
+        "port": 21,
+        "username": "",
+        "password": "",
+        "remotePath": "/public_html/wp/wp-content/languages/plugins",
+        "uploadOnSave": false,
+        "useTempFile": false,
+        "openSsh": false,
+        "syncMode": "full",
+        "syncOption": {
+            "delete": true
+        }
     }
-}
+]
