@@ -1,0 +1,55 @@
+<mjml>
+	<mj-head>
+		<mj-attributes>
+			<mj-all font-family="Arial, Helvetica, sans-serif" />
+		</mj-attributes>
+	</mj-head>
+	<mj-body width="640px">
+
+		<mj-section padding="0">
+			<mj-column>
+				<mj-image src="https://publibalao.com/wp/wp-content/uploads/2021/10/PubliBalao_2-300x59.png" href="https://publibalao.com/" alt="" width="300px" padding="30px" />
+			</mj-column>
+		</mj-section>
+
+		<mj-section background-color="#f36d61" padding="0">
+			<mj-column>
+				<mj-text color="#ffffff" font-size="12px" font-weight="bold" text-transform="uppercase" align="center" padding="15px">Pedido de informações - Pacote</mj-text>
+			</mj-column>
+		</mj-section>
+
+		<mj-section border-left="1px solid #000000" border-right="1px solid #000000" border-bottom="1px solid #000000" padding="0">
+			<mj-column>
+				<mj-table font-size="14px" cellpadding="0">
+					<tr>
+						<td style="padding: 15px; vertical-align: top; font-weight: bold; width: 100px;">Nome</td>
+						<td style="padding: 15px; vertical-align: top;">[user-name]</td>
+					</tr>
+					<tr>
+						<td style="padding: 15px; vertical-align: top; font-weight: bold;">Email</td>
+						<td style="padding: 15px; vertical-align: top;">[user-email]</td>
+					</tr>
+					<tr>
+						<td style="padding: 15px; vertical-align: top; font-weight: bold;">Telefone</td>
+						<td style="padding: 15px; vertical-align: top;">[user-telephone]</td>
+					</tr>
+					<tr>
+						<td style="padding: 15px; vertical-align: top; font-weight: bold;">Pacote</td>
+						<td style="padding: 15px; vertical-align: top;">[user-package]</td>
+					</tr>
+					<tr>
+						<td style="padding: 15px; vertical-align: top; font-weight: bold;">Extras</td>
+						<td style="padding: 15px; vertical-align: top;">[user-extras]</td>
+					</tr>
+					<tr>
+						<td style="padding: 15px; vertical-align: top; font-weight: bold;">Mensagem</td>
+						<td style="padding: 15px; vertical-align: top;">[user-message]</td>
+					</tr>
+				</mj-table>
+			</mj-column>
+		</mj-section>
+
+		<mj-include path="../_partials/footer-publibalao.mjml" />
+
+	</mj-body>
+</mjml>
