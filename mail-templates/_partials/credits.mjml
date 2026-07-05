@@ -1,0 +1,7 @@
+<mj-section background-color="#f2efec" padding="18px 20px">
+	<mj-column>
+		<mj-text color="#999999" font-size="11px" align="center">
+			Desenvolvido por <a href="https://plura.pt" style="color: #999999;">Plura</a>
+		</mj-text>
+	</mj-column>
+</mj-section>
