@@ -35,7 +35,7 @@
 
 			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Informação Piloto</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Informação Piloto</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -82,7 +82,7 @@
 
 			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Experiência Piloto Balão de Ar Quente</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Experiência Piloto Balão de Ar Quente</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -97,7 +97,7 @@
 
 			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Informação Balão de Ar Quente</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Informação Balão de Ar Quente</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -140,7 +140,7 @@
 
 			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Informação Equipa</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Informação Equipa</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -159,7 +159,7 @@
 
 			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Tipo e Nº de Quartos Pretendido</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Tipo e Nº de Quartos Pretendido</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -190,7 +190,7 @@
 
 			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Fatura</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Fatura</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -213,7 +213,7 @@
 
 			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Conclusão</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Conclusão</mj-text>
 				</mj-column>
 			</mj-section>
 
