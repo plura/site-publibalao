@@ -8,7 +8,7 @@ WordPress site repo for [publibalao.com](https://publibalao.com). Only custom-de
 - `plugin/` — custom Publibalão plugin, synced to `/public_html/wp/wp-content/plugins/publibalao/`
 - `languages/` — translation files for third-party plugins, synced to `/public_html/wp/wp-content/languages/plugins/`
 - `other-plugins/` — third-party plugins (modern-events-calendar, revslider), kept locally for reference only; not tracked or synced
-- `mail-templates/` — HTML templates used as Contact Form 7 message bodies
+- `mail-templates/` — MJML sources for Contact Form 7 message bodies, one folder per template (each with its `.mjml` source and built `.html`); `_partials/` holds shared header/footer includes, `legacy/` holds superseded HTML-only templates kept for reference. Run `npm run build` (or `npm run build:<name>`) inside `mail-templates/` to rebuild the `.html` files after editing a `.mjml` source — paste the built HTML into CF7's mail body field.
 - `.backup/` — local backups, not tracked
 
 ## Deployment
