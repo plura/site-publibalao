@@ -11,17 +11,7 @@
 
 		<mj-wrapper background-color="#ffffff" border-radius="16px" padding="0">
 
-			<mj-section padding="30px 30px 20px">
-				<mj-column>
-					<mj-image src="https://publibalao.com/wp/wp-content/uploads/2022/06/Festivalbaloes_1.png" href="https://publibalao.com/fibaq/" alt="FIBAQ" width="160px" />
-				</mj-column>
-			</mj-section>
-
-			<mj-section background-color="#f36d61" padding="18px 30px">
-				<mj-column>
-					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Inscrição FIBAQ</mj-text>
-				</mj-column>
-			</mj-section>
+			<mj-include path="../_partials/header-fibaq.mjml" />
 
 			<mj-include path="register-fields.mjml" />
 

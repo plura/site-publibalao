@@ -11,7 +11,7 @@
 
 		<mj-wrapper background-color="#ffffff" border-radius="16px" padding="0">
 
-			<mj-include path="../_partials/header-publibalao.mjml" />
+			<mj-include path="../_partials/header.mjml" />
 
 			<mj-section background-color="#f36d61" padding="18px 30px">
 				<mj-column>
@@ -55,7 +55,7 @@
 				</mj-column>
 			</mj-section>
 
-			<mj-include path="../_partials/footer-publibalao.mjml" />
+			<mj-include path="../_partials/footer.mjml" />
 
 		</mj-wrapper>
 
