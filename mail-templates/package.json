@@ -1,10 +1,11 @@
 {
 	"scripts": {
 		"build:register": "npx mjml register/register.mjml -o register/register.html --config.allowIncludes true --config.includePath .",
+		"build:register-reply": "npx mjml register/register-reply.mjml -o register/register-reply.html --config.allowIncludes true --config.includePath .",
 		"build:contact": "npx mjml contact/contact.mjml -o contact/contact.html --config.allowIncludes true --config.includePath .",
 		"build:package": "npx mjml package/package.mjml -o package/package.html --config.allowIncludes true --config.includePath .",
 		"build:service": "npx mjml service/service.mjml -o service/service.html --config.allowIncludes true --config.includePath .",
 		"build:voucher": "npx mjml voucher/voucher.mjml -o voucher/voucher.html --config.allowIncludes true --config.includePath .",
-		"build": "npm run build:register && npm run build:contact && npm run build:package && npm run build:service && npm run build:voucher"
+		"build": "npm run build:register && npm run build:register-reply && npm run build:contact && npm run build:package && npm run build:service && npm run build:voucher"
 	}
 }

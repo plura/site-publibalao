@@ -21,6 +21,18 @@
 				</mj-column>
 			</mj-section>
 
+			<mj-section padding="20px 30px 0">
+				<mj-column>
+					<mj-text align="center" font-size="12px" line-height="18px">
+						<p>Obrigada <strong>[pilot-firstname]</strong> pela sua inscrição.<br />
+						Caso tenha alguma questão por favor contacte:</p>
+						<p>Maria Inês Soares<br />
+						<a href="tel:+351-927501516" style="color: #f36d61; text-decoration: underline;">+351 927 501 516</a><br />
+						<a href="mailto:fibaq@publibalao.com" style="color: #f36d61; text-decoration: underline;">fibaq@publibalao.com</a></p>
+					</mj-text>
+				</mj-column>
+			</mj-section>
+
 			<mj-include path="register-fields.mjml" />
 
 			<mj-include path="../_partials/footer-fibaq.mjml" />
