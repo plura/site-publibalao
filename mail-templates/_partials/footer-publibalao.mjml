@@ -9,19 +9,19 @@
 		</mj-text>
 		<mj-text color="#ffffff" font-size="12px" line-height="18px" padding-top="15px">
 			<strong>Reservas Publibalão</strong><br />
-			<a href="mailto:reservas@publibalao.com" style="color: #ffffff;">reservas@publibalao.com</a><br />
-			<a href="tel:+351963017263" style="color: #ffffff;">+351 963 017 263</a>
+			<a href="mailto:reservas@publibalao.com" style="color: #ffffff; text-decoration: underline;">reservas@publibalao.com</a><br />
+			<a href="tel:+351963017263" style="color: #ffffff; text-decoration: underline;">+351 963 017 263</a>
 		</mj-text>
 		<mj-text color="#ffffff" font-size="12px" line-height="18px" padding-top="15px">
 			<strong>Media</strong><br />
-			<a href="mailto:media@publibalao.com" style="color: #ffffff;">media@publibalao.com</a>
+			<a href="mailto:media@publibalao.com" style="color: #ffffff; text-decoration: underline;">media@publibalao.com</a>
 		</mj-text>
 	</mj-column>
 	<mj-column width="50%">
 		<mj-text color="#ffffff" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing="1px" padding-bottom="10px">Redes Sociais</mj-text>
 		<mj-text color="#ffffff" font-size="12px" line-height="22px">
-			<a href="https://www.facebook.com/publibalao" style="color: #ffffff;">Facebook</a><br />
-			<a href="https://www.instagram.com/publi.balao" style="color: #ffffff;">Instagram</a>
+			<a href="https://www.facebook.com/publibalao" style="color: #ffffff; text-decoration: underline;">Facebook</a><br />
+			<a href="https://www.instagram.com/publi.balao" style="color: #ffffff; text-decoration: underline;">Instagram</a>
 		</mj-text>
 	</mj-column>
 </mj-section>

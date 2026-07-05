@@ -9,15 +9,15 @@
 		</mj-text>
 		<mj-text color="#ffffff" font-size="12px" line-height="18px" padding-top="15px">
 			<strong>Informações</strong><br />
-			<a href="mailto:fibaq@publibalao.com" style="color: #ffffff;">fibaq@publibalao.com</a><br />
-			<a href="tel:+351963017263" style="color: #ffffff;">+351 963 017 263</a>
+			<a href="mailto:fibaq@publibalao.com" style="color: #ffffff; text-decoration: underline;">fibaq@publibalao.com</a><br />
+			<a href="tel:+351963017263" style="color: #ffffff; text-decoration: underline;">+351 963 017 263</a>
 		</mj-text>
 	</mj-column>
 	<mj-column width="50%">
 		<mj-text color="#ffffff" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing="1px" padding-bottom="10px">Redes Sociais</mj-text>
 		<mj-text color="#ffffff" font-size="12px" line-height="22px">
-			<a href="https://www.facebook.com/festivalfibaq" style="color: #ffffff;">Facebook</a><br />
-			<a href="https://www.instagram.com/festival.ibaq" style="color: #ffffff;">Instagram</a>
+			<a href="https://www.facebook.com/festivalfibaq" style="color: #ffffff; text-decoration: underline;">Facebook</a><br />
+			<a href="https://www.instagram.com/festival.ibaq" style="color: #ffffff; text-decoration: underline;">Instagram</a>
 		</mj-text>
 	</mj-column>
 </mj-section>
