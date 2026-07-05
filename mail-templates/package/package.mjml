@@ -8,6 +8,7 @@
 	<mj-body background-color="#f2efec" width="640px">
 
 		<mj-include path="../_partials/spacer.mjml" />
+		<mj-include path="../_partials/spacer.mjml" />
 
 		<mj-wrapper background-color="#ffffff" border-radius="16px" padding="0">
 
@@ -81,6 +82,7 @@
 
 		<mj-include path="../_partials/credits.mjml" />
 
+		<mj-include path="../_partials/spacer.mjml" />
 		<mj-include path="../_partials/spacer.mjml" />
 
 	</mj-body>
