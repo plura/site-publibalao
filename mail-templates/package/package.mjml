@@ -11,9 +11,9 @@
 
 			<mj-include path="../_partials/header-publibalao.mjml" />
 
-			<mj-section background-color="#f36d61" padding="14px 30px">
+			<mj-section background-color="#f36d61" padding="18px 30px">
 				<mj-column>
-					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing="1px" align="center">Pedido de Informações &ndash; Pacote</mj-text>
+					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Pacote</mj-text>
 				</mj-column>
 			</mj-section>
 

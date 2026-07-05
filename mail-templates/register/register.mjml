@@ -15,9 +15,9 @@
 				</mj-column>
 			</mj-section>
 
-			<mj-section background-color="#f36d61" padding="14px 30px">
+			<mj-section background-color="#f36d61" padding="18px 30px">
 				<mj-column>
-					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing="1px" align="center">Inscrição FIBAQ</mj-text>
+					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Inscrição FIBAQ</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -33,9 +33,9 @@
 				</mj-column>
 			</mj-section>
 
-			<mj-section background-color="#fdece9" padding="10px 30px">
+			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="12px" letter-spacing=".5px">Informação Piloto</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Informação Piloto</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -80,9 +80,9 @@
 				<mj-column width="70%"><mj-text padding="16px 0">[pilot-id]</mj-text></mj-column>
 			</mj-section>
 
-			<mj-section background-color="#fdece9" padding="10px 30px">
+			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="12px" letter-spacing=".5px">Experiência Piloto Balão de Ar Quente</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Experiência Piloto Balão de Ar Quente</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -95,9 +95,9 @@
 				<mj-column width="70%"><mj-text padding="16px 0">[pilot-ax-pic-hours]</mj-text></mj-column>
 			</mj-section>
 
-			<mj-section background-color="#fdece9" padding="10px 30px">
+			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="12px" letter-spacing=".5px">Informação Balão de Ar Quente</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Informação Balão de Ar Quente</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -138,9 +138,9 @@
 				<mj-column width="70%"><mj-text padding="16px 0">[balloon-passengers-number]</mj-text></mj-column>
 			</mj-section>
 
-			<mj-section background-color="#fdece9" padding="10px 30px">
+			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="12px" letter-spacing=".5px">Informação Equipa</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Informação Equipa</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -157,9 +157,9 @@
 				<mj-column width="70%"><mj-text padding="16px 0">[crew-name3]</mj-text></mj-column>
 			</mj-section>
 
-			<mj-section background-color="#fdece9" padding="10px 30px">
+			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="12px" letter-spacing=".5px">Tipo e Nº de Quartos Pretendido</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Tipo e Nº de Quartos Pretendido</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -188,9 +188,9 @@
 				<mj-column width="70%"><mj-text padding="16px 0">[date-checkout]</mj-text></mj-column>
 			</mj-section>
 
-			<mj-section background-color="#fdece9" padding="10px 30px">
+			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="12px" letter-spacing=".5px">Fatura</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Fatura</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -211,9 +211,9 @@
 				<mj-column width="70%"><mj-text padding="16px 0">[invoice-address]</mj-text></mj-column>
 			</mj-section>
 
-			<mj-section background-color="#fdece9" padding="10px 30px">
+			<mj-section background-color="#fdece9" padding="14px 30px">
 				<mj-column>
-					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="12px" letter-spacing=".5px">Conclusão</mj-text>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px">Conclusão</mj-text>
 				</mj-column>
 			</mj-section>
 
