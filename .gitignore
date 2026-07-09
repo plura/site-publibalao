@@ -3,3 +3,5 @@ sftp-config.json
 !.vscode/sftp.json.example
 .backup/
 other-plugins/
+cf7.txt
+cf7-en.txt
