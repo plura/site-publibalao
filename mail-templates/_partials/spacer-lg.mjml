@@ -1,5 +1,5 @@
 <mj-section padding="0">
 	<mj-column>
-		<mj-spacer mj-class="pb-space" />
+		<mj-spacer mj-class="pb-space-lg" />
 	</mj-column>
 </mj-section>

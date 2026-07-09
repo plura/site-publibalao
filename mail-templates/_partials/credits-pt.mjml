@@ -8,5 +8,4 @@
 	</mj-column>
 </mj-section>
 
-<mj-include path="spacer.mjml" />
-<mj-include path="spacer.mjml" />
+<mj-include path="spacer-lg.mjml" />

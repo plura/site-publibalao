@@ -40,4 +40,9 @@
 
 	<!-- "Desenvolvido por Plura" / "Developed by Plura" line. -->
 	<mj-class name="pb-credits" color="#999999" font-size="11px" align="center" padding="0" />
+
+	<!-- Vertical gap sizes — pb-space between the card and the credits line,
+	     pb-space-lg above the card and below credits (see spacer.mjml / spacer-lg.mjml). -->
+	<mj-class name="pb-space" height="24px" />
+	<mj-class name="pb-space-lg" height="48px" />
 </mj-attributes>
