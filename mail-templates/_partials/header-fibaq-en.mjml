@@ -4,8 +4,8 @@
 	</mj-column>
 </mj-section>
 
-<mj-section background-color="#f36d61" padding="18px 30px">
+<mj-section mj-class="pb-title-section">
 	<mj-column>
-		<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">FIBAQ Registration</mj-text>
+		<mj-text mj-class="pb-title">FIBAQ Registration</mj-text>
 	</mj-column>
 </mj-section>

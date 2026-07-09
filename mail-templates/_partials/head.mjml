@@ -1,4 +1,43 @@
+<!-- Tells clients that DO respect it (mainly Apple Mail) not to auto-link and
+     re-style phone numbers/emails as their own "smart" links. Gmail ignores
+     this and needs the zero-width-non-joiner trick in the actual numbers/
+     addresses instead. -->
+<mj-raw>
+	<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+	<!-- Opts out of Gmail/Apple Mail/Outlook.com auto-dark-mode — without this,
+	     clients guess at a dark palette themselves (inverting/recoloring
+	     backgrounds and text), which clashes with the brand's actual colors. -->
+	<meta name="color-scheme" content="light">
+	<meta name="supported-color-schemes" content="light">
+</mj-raw>
+
 <mj-attributes>
 	<mj-all font-family="Arial, Helvetica, sans-serif" />
 	<mj-text color="#333333" font-size="14px" line-height="20px" />
+
+	<!-- Identical on every template. -->
+	<mj-body background-color="#f2efec" width="640px" />
+	<!-- The card wrapper — identical on every template. -->
+	<mj-wrapper background-color="#ffffff" border-radius="16px" padding="0" />
+
+	<!-- Coral title band under the logo. -->
+	<mj-class name="pb-title-section" background-color="#f36d61" padding="18px 30px" />
+	<mj-class name="pb-title" color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center" />
+
+	<!-- Soft-tint group-header bars in register's field table. -->
+	<mj-class name="pb-group-section" background-color="#fdece9" padding="14px 30px" />
+	<mj-class name="pb-group" color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0" />
+
+	<!-- A single label/value field row. -->
+	<mj-class name="pb-row" padding="0 30px" border-bottom="1px solid #eee2dd" />
+	<mj-class name="pb-label" color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0" />
+	<mj-class name="pb-value" padding="16px 0" />
+
+	<!-- Footer presets — identical between the pt/en and fibaq/publibalao variants. -->
+	<mj-class name="pb-footer-section" background-color="#f36d61" padding="30px 20px" />
+	<mj-class name="pb-footer-heading" color="#ffffff" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing="1px" padding-bottom="10px" />
+	<mj-class name="pb-footer-text" color="#ffffff" font-size="12px" line-height="18px" />
+
+	<!-- "Desenvolvido por Plura" / "Developed by Plura" line. -->
+	<mj-class name="pb-credits" color="#999999" font-size="11px" align="center" padding="0" />
 </mj-attributes>

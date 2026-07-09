@@ -2,63 +2,63 @@
 	<mj-head>
 		<mj-include path="../_partials/head.mjml" />
 	</mj-head>
-	<mj-body background-color="#f2efec" width="640px">
+	<mj-body>
 
 		<mj-include path="../_partials/spacer.mjml" />
 		<mj-include path="../_partials/spacer.mjml" />
 
-		<mj-wrapper background-color="#ffffff" border-radius="16px" padding="0">
+		<mj-wrapper>
 
 			<mj-include path="../_partials/header.mjml" />
 
-			<mj-section background-color="#f36d61" padding="18px 30px">
+			<mj-section mj-class="pb-title-section">
 				<mj-column>
-					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Service</mj-text>
+					<mj-text mj-class="pb-title">Service</mj-text>
 				</mj-column>
 			</mj-section>
 
-			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+			<mj-section mj-class="pb-row">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Name</mj-text>
+					<mj-text mj-class="pb-label">Name</mj-text>
 				</mj-column>
 				<mj-column width="70%">
-					<mj-text padding="16px 0">[user-name]</mj-text>
+					<mj-text mj-class="pb-value">[user-name]</mj-text>
 				</mj-column>
 			</mj-section>
 
-			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+			<mj-section mj-class="pb-row">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Email</mj-text>
+					<mj-text mj-class="pb-label">Email</mj-text>
 				</mj-column>
 				<mj-column width="70%">
-					<mj-text padding="16px 0">[user-email]</mj-text>
+					<mj-text mj-class="pb-value">[user-email]</mj-text>
 				</mj-column>
 			</mj-section>
 
-			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+			<mj-section mj-class="pb-row">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Phone</mj-text>
+					<mj-text mj-class="pb-label">Phone</mj-text>
 				</mj-column>
 				<mj-column width="70%">
-					<mj-text padding="16px 0">[user-telephone]</mj-text>
+					<mj-text mj-class="pb-value">[user-telephone]</mj-text>
 				</mj-column>
 			</mj-section>
 
-			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+			<mj-section mj-class="pb-row">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Package</mj-text>
+					<mj-text mj-class="pb-label">Package</mj-text>
 				</mj-column>
 				<mj-column width="70%">
-					<mj-text padding="16px 0">[user-package]</mj-text>
+					<mj-text mj-class="pb-value">[user-package]</mj-text>
 				</mj-column>
 			</mj-section>
 
 			<mj-section padding="0 30px 20px">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Message</mj-text>
+					<mj-text mj-class="pb-label">Message</mj-text>
 				</mj-column>
 				<mj-column width="70%">
-					<mj-text padding="16px 0">[user-message]</mj-text>
+					<mj-text mj-class="pb-value">[user-message]</mj-text>
 				</mj-column>
 			</mj-section>
 
