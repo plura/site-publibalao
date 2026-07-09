@@ -11,7 +11,7 @@
 
 			<mj-include path="../_partials/header-fibaq-pt.mjml" />
 
-			<mj-include path="register-fields-pt.mjml" />
+			<mj-include path="_partials/fields-pt.mjml" />
 
 			<mj-include path="../_partials/footer-fibaq-pt.mjml" />
 
