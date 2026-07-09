@@ -1,11 +1,17 @@
 {
 	"scripts": {
-		"build:register": "npx mjml register/register.mjml -o register/register.html --config.allowIncludes true --config.includePath . --config.minify true",
-		"build:register-reply": "npx mjml register/register-reply.mjml -o register/register-reply.html --config.allowIncludes true --config.includePath . --config.minify true",
-		"build:contact": "npx mjml contact/contact.mjml -o contact/contact.html --config.allowIncludes true --config.includePath . --config.minify true",
-		"build:package": "npx mjml package/package.mjml -o package/package.html --config.allowIncludes true --config.includePath . --config.minify true",
-		"build:service": "npx mjml service/service.mjml -o service/service.html --config.allowIncludes true --config.includePath . --config.minify true",
-		"build:voucher": "npx mjml voucher/voucher.mjml -o voucher/voucher.html --config.allowIncludes true --config.includePath . --config.minify true",
-		"build": "npm run build:register && npm run build:register-reply && npm run build:contact && npm run build:package && npm run build:service && npm run build:voucher"
+		"build:register-pt": "npx mjml register/register-pt.mjml -o register/register-pt.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:register-en": "npx mjml register/register-en.mjml -o register/register-en.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:register-reply-pt": "npx mjml register/register-reply-pt.mjml -o register/register-reply-pt.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:register-reply-en": "npx mjml register/register-reply-en.mjml -o register/register-reply-en.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:contact-pt": "npx mjml contact/contact-pt.mjml -o contact/contact-pt.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:contact-en": "npx mjml contact/contact-en.mjml -o contact/contact-en.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:package-pt": "npx mjml package/package-pt.mjml -o package/package-pt.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:package-en": "npx mjml package/package-en.mjml -o package/package-en.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:service-pt": "npx mjml service/service-pt.mjml -o service/service-pt.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:service-en": "npx mjml service/service-en.mjml -o service/service-en.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:voucher-pt": "npx mjml voucher/voucher-pt.mjml -o voucher/voucher-pt.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build:voucher-en": "npx mjml voucher/voucher-en.mjml -o voucher/voucher-en.html --config.allowIncludes true --config.includePath . --config.minify true",
+		"build": "npm run build:register-pt && npm run build:register-en && npm run build:register-reply-pt && npm run build:register-reply-en && npm run build:contact-pt && npm run build:contact-en && npm run build:package-pt && npm run build:package-en && npm run build:service-pt && npm run build:service-en && npm run build:voucher-pt && npm run build:voucher-en"
 	}
 }

@@ -13,13 +13,13 @@
 
 			<mj-section background-color="#f36d61" padding="18px 30px">
 				<mj-column>
-					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Pacote</mj-text>
+					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Contact</mj-text>
 				</mj-column>
 			</mj-section>
 
 			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Nome</mj-text>
+					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Name</mj-text>
 				</mj-column>
 				<mj-column width="70%">
 					<mj-text padding="16px 0">[user-name]</mj-text>
@@ -37,47 +37,29 @@
 
 			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Telefone</mj-text>
+					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Phone</mj-text>
 				</mj-column>
 				<mj-column width="70%">
 					<mj-text padding="16px 0">[user-telephone]</mj-text>
 				</mj-column>
 			</mj-section>
 
-			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
-				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Pacote</mj-text>
-				</mj-column>
-				<mj-column width="70%">
-					<mj-text padding="16px 0">[user-package]</mj-text>
-				</mj-column>
-			</mj-section>
-
-			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
-				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Extras</mj-text>
-				</mj-column>
-				<mj-column width="70%">
-					<mj-text padding="16px 0">[user-extras]</mj-text>
-				</mj-column>
-			</mj-section>
-
 			<mj-section padding="0 30px 20px">
 				<mj-column width="30%">
-					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Mensagem</mj-text>
+					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Message</mj-text>
 				</mj-column>
 				<mj-column width="70%">
 					<mj-text padding="16px 0">[user-message]</mj-text>
 				</mj-column>
 			</mj-section>
 
-			<mj-include path="../_partials/footer.mjml" />
+			<mj-include path="../_partials/footer-en.mjml" />
 
 		</mj-wrapper>
 
 		<mj-include path="../_partials/spacer.mjml" />
 
-		<mj-include path="../_partials/credits.mjml" />
+		<mj-include path="../_partials/credits-en.mjml" />
 
 		<mj-include path="../_partials/spacer.mjml" />
 		<mj-include path="../_partials/spacer.mjml" />

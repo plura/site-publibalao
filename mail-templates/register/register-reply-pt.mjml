@@ -9,7 +9,7 @@
 
 		<mj-wrapper background-color="#ffffff" border-radius="16px" padding="0">
 
-			<mj-include path="../_partials/header-fibaq.mjml" />
+			<mj-include path="../_partials/header-fibaq-pt.mjml" />
 
 			<mj-section padding="20px 30px 0">
 				<mj-column>
@@ -24,15 +24,15 @@
 				</mj-column>
 			</mj-section>
 
-			<mj-include path="register-fields.mjml" />
+			<mj-include path="register-fields-pt.mjml" />
 
-			<mj-include path="../_partials/footer-fibaq.mjml" />
+			<mj-include path="../_partials/footer-fibaq-pt.mjml" />
 
 		</mj-wrapper>
 
 		<mj-include path="../_partials/spacer.mjml" />
 
-		<mj-include path="../_partials/credits.mjml" />
+		<mj-include path="../_partials/credits-pt.mjml" />
 
 		<mj-include path="../_partials/spacer.mjml" />
 		<mj-include path="../_partials/spacer.mjml" />

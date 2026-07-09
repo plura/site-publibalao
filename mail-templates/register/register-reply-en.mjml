@@ -1,0 +1,41 @@
+<mjml>
+	<mj-head>
+		<mj-include path="../_partials/head.mjml" />
+	</mj-head>
+	<mj-body background-color="#f2efec" width="640px">
+
+		<mj-include path="../_partials/spacer.mjml" />
+		<mj-include path="../_partials/spacer.mjml" />
+
+		<mj-wrapper background-color="#ffffff" border-radius="16px" padding="0">
+
+			<mj-include path="../_partials/header-fibaq-en.mjml" />
+
+			<mj-section padding="20px 30px 0">
+				<mj-column>
+					<mj-text align="center" font-size="12px" line-height="18px">
+						<p>Thank you <strong>[pilot-firstname]</strong> for your registration.<br />
+						If you have any questions, please contact:</p>
+						<p>Maria Inês Soares<br />
+						<a href="tel:+351-927501516" style="color: #f36d61; text-decoration: underline;">+351 927 501 516</a><br />
+						<a href="mailto:fibaq@publibalao.com" style="color: #f36d61; text-decoration: underline;">fibaq@publibalao.com</a></p>
+						<p>A copy of your submitted data is included below.</p>
+					</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-include path="register-fields-en.mjml" />
+
+			<mj-include path="../_partials/footer-fibaq-en.mjml" />
+
+		</mj-wrapper>
+
+		<mj-include path="../_partials/spacer.mjml" />
+
+		<mj-include path="../_partials/credits-en.mjml" />
+
+		<mj-include path="../_partials/spacer.mjml" />
+		<mj-include path="../_partials/spacer.mjml" />
+
+	</mj-body>
+</mjml>

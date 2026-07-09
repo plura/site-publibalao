@@ -13,7 +13,7 @@
 
 			<mj-section background-color="#f36d61" padding="18px 30px">
 				<mj-column>
-					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Voucher</mj-text>
+					<mj-text color="#ffffff" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" align="center">Pacote</mj-text>
 				</mj-column>
 			</mj-section>
 
@@ -44,6 +44,24 @@
 				</mj-column>
 			</mj-section>
 
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%">
+					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Pacote</mj-text>
+				</mj-column>
+				<mj-column width="70%">
+					<mj-text padding="16px 0">[user-package]</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%">
+					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Extras</mj-text>
+				</mj-column>
+				<mj-column width="70%">
+					<mj-text padding="16px 0">[user-extras]</mj-text>
+				</mj-column>
+			</mj-section>
+
 			<mj-section padding="0 30px 20px">
 				<mj-column width="30%">
 					<mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Mensagem</mj-text>
@@ -53,13 +71,13 @@
 				</mj-column>
 			</mj-section>
 
-			<mj-include path="../_partials/footer.mjml" />
+			<mj-include path="../_partials/footer-pt.mjml" />
 
 		</mj-wrapper>
 
 		<mj-include path="../_partials/spacer.mjml" />
 
-		<mj-include path="../_partials/credits.mjml" />
+		<mj-include path="../_partials/credits-pt.mjml" />
 
 		<mj-include path="../_partials/spacer.mjml" />
 		<mj-include path="../_partials/spacer.mjml" />

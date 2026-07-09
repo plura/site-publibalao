@@ -1,0 +1,188 @@
+			<mj-section background-color="#fdece9" padding="14px 30px">
+				<mj-column>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Pilot Information</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">First Name</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-firstname]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Last Name</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-lastname]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Address</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-address1]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Address (cont.)</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-address2]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">City</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-city]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Country</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-country]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Postal Code</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-cep]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Email</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-email]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Phone Number</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-phone]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">ID Card / Passport Number</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-id]</mj-text></mj-column>
+			</mj-section>
+
+			<mj-section background-color="#fdece9" padding="14px 30px">
+				<mj-column>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Hot Air Balloon Pilot Experience</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Flight Experience</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-experience]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">AX PIC Hours</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[pilot-ax-pic-hours]</mj-text></mj-column>
+			</mj-section>
+
+			<mj-section background-color="#fdece9" padding="14px 30px">
+				<mj-column>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Hot Air Balloon Information</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Owner's Name</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-owner-name]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Balloon Registration</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-registration]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Type</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-type]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Manufacturer</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-manufacturer]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Sponsor</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-sponsor]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Insurance Company</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-insurance-company]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Policy Number</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-insurance-apolice-number]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Expiration Date</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-insurance-apolice-expiration-date]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Carrying Passengers? How Many?</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[balloon-passengers-number]</mj-text></mj-column>
+			</mj-section>
+
+			<mj-section background-color="#fdece9" padding="14px 30px">
+				<mj-column>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Crew Information</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Chase Crew 1</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[crew-name1]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Chase Crew 2</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[crew-name2]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Chase Crew 3</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[crew-name3]</mj-text></mj-column>
+			</mj-section>
+
+			<mj-section background-color="#fdece9" padding="14px 30px">
+				<mj-column>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Room Type &amp; Number Requested</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Single Room</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[crew-room-type-number-single]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Double Room</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[crew-room-type-number-couple]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Twin Room</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[crew-room-type-number-single-double]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Triple Room</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[crew-room-type-number-triple]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Check-in</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[date-checkin]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Check-out</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[date-checkout]</mj-text></mj-column>
+			</mj-section>
+
+			<mj-section background-color="#fdece9" padding="14px 30px">
+				<mj-column>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Invoice</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Invoice</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[invoice]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Name</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[invoice-name]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Tax ID (NIF)</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[invoice-vat]</mj-text></mj-column>
+			</mj-section>
+			<mj-section padding="0 30px" border-bottom="1px solid #eee2dd">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Address</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[invoice-address]</mj-text></mj-column>
+			</mj-section>
+
+			<mj-section background-color="#fdece9" padding="14px 30px">
+				<mj-column>
+					<mj-text color="#f36d61" font-weight="bold" text-transform="uppercase" font-size="13px" letter-spacing=".5px" padding="0">Conclusion</mj-text>
+				</mj-column>
+			</mj-section>
+
+			<mj-section padding="0 30px 20px">
+				<mj-column width="30%"><mj-text color="#f36d61" font-size="11px" font-weight="bold" text-transform="uppercase" letter-spacing=".5px" padding="16px 0">Comments</mj-text></mj-column>
+				<mj-column width="70%"><mj-text padding="16px 0">[comments]</mj-text></mj-column>
+			</mj-section>
