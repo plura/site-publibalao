@@ -9,8 +9,8 @@
 		</mj-text>
 		<mj-text mj-class="pb-footer-text" padding-top="15px">
 			<strong>Information</strong><br />
-			<a href="mailto:fibaq@publibalao.com" style="color: #ffffff; text-decoration: underline;">fibaq@publibalao.com</a><br />
-			<a href="tel:+351963017263" style="color: #ffffff; text-decoration: underline;">+351 963 017 263</a>
+			<a href="mailto:fibaq@publibalao.com" style="color: #ffffff; text-decoration: underline;">fibaq&zwnj;@publibalao.com</a><br />
+			<a href="tel:+351963017263" style="color: #ffffff; text-decoration: underline;">+351&zwnj; 963 017 263</a>
 		</mj-text>
 	</mj-column>
 	<mj-column width="50%">

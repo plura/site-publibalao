@@ -9,12 +9,12 @@
 		</mj-text>
 		<mj-text mj-class="pb-footer-text" padding-top="15px">
 			<strong>Reservas Publibalão</strong><br />
-			<a href="mailto:reservas@publibalao.com" style="color: #ffffff; text-decoration: underline;">reservas@publibalao.com</a><br />
-			<a href="tel:+351963017263" style="color: #ffffff; text-decoration: underline;">+351 963 017 263</a>
+			<a href="mailto:reservas@publibalao.com" style="color: #ffffff; text-decoration: underline;">reservas&zwnj;@publibalao.com</a><br />
+			<a href="tel:+351963017263" style="color: #ffffff; text-decoration: underline;">+351&zwnj; 963 017 263</a>
 		</mj-text>
 		<mj-text mj-class="pb-footer-text" padding-top="15px">
 			<strong>Media</strong><br />
-			<a href="mailto:media@publibalao.com" style="color: #ffffff; text-decoration: underline;">media@publibalao.com</a>
+			<a href="mailto:media@publibalao.com" style="color: #ffffff; text-decoration: underline;">media&zwnj;@publibalao.com</a>
 		</mj-text>
 	</mj-column>
 	<mj-column width="50%">
