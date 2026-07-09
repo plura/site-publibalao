@@ -66,12 +66,7 @@
 
 		</mj-wrapper>
 
-		<mj-include path="../_partials/spacer.mjml" />
-
 		<mj-include path="../_partials/credits-pt.mjml" />
-
-		<mj-include path="../_partials/spacer.mjml" />
-		<mj-include path="../_partials/spacer.mjml" />
 
 	</mj-body>
 </mjml>

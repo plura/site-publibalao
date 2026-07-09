@@ -30,12 +30,7 @@
 
 		</mj-wrapper>
 
-		<mj-include path="../_partials/spacer.mjml" />
-
 		<mj-include path="../_partials/credits-en.mjml" />
-
-		<mj-include path="../_partials/spacer.mjml" />
-		<mj-include path="../_partials/spacer.mjml" />
 
 	</mj-body>
 </mjml>
