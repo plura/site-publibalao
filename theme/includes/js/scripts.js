@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
 
 	const page = (id) => {
 
@@ -72,12 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		//Home / Contactos (Publibalao e FIBAQ)
 		if( page( ['wpmlobj-id-2065', 'wpmlobj-id-2851', 'wpmlobj-id-5639'] ) ) {
 
-			console.log('wee');
-		
+			const { PBLocations } = await import('./locations.js');
+
 			new PBLocations({
 				mapHolder: document.getElementById('map-holder'),
 				listHolder: document.getElementById('map-locations-holder'),
-				restPath: pbobj.restURL
+				restPath: plura_wp_data.restURL
 			});
 
 		}
@@ -135,8 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	//FIBAQ SUBSITE [FORM]
 	} else if( page('wpmlobj-id-3066') ) {
 
-		new PBForm({config: pbobj});
-    
+		const { PBForm } = await import('./fibaq-form.js');
+
+		new PBForm({ config: {
+			fibaq: window.pbobj?.fibaq,
+			lang: plura_wp_data.lang,
+			restURL: plura_wp_data.restURL
+		} });
+
 	}
 
 });

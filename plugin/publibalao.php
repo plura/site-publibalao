@@ -8,6 +8,11 @@
  */
 //http://www.sitepoint.com/including-javascript-in-plugins-or-themes/
 
+// URL for the import map, DIR for plura_wp_enqueue: it versions local files with
+// filemtime but treats anything matching ^https?:// as external and skips versioning.
+define( 'PB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'PB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
 $MODULES = [
 	'p/p',
 	'p/modules/p-revslider',
@@ -20,6 +25,7 @@ $MODULES = [
 	'includes/locations',
 	'includes/media',
 	'includes/data',
+	'includes/import-map',
 	'includes/teams-and-pilots',
 ];
 
@@ -37,11 +43,10 @@ foreach ($MODULES as $module) {
 function publibalao_styles_and_scripts() {
 	global $post, $sitepress;
 
-	$data = [
-		'pluginURL'  => plugin_dir_url(__FILE__),
-		'restURL'    => rest_url(),
-		'restNonce'  => wp_create_nonce('wp_rest'),
-	];
+	// Only what plura_wp_data does not already expose. It carries home/pluginURL/
+	// restURL/restNonce/lang, but its `lang` is the current code alone and the popup
+	// routing below needs it paired with the default.
+	$data = [];
 
 	if ( isset($sitepress) && method_exists($sitepress, 'get_current_language') ) {
 		$data['lang'] = [
@@ -50,20 +55,13 @@ function publibalao_styles_and_scripts() {
 		];
 	}
 
-	// --- Styles ---
-	wp_enqueue_style(
-		'pb-globals',
-		plugins_url('/includes/css/globals.css', __FILE__),
-		[],
-		filemtime(__DIR__ . '/includes/css/globals.css')
-	);
-
-	wp_enqueue_style(
-		'pb-globals-theme',
-		plugins_url('/includes/css/globals-theme.css', __FILE__),
-		[],
-		filemtime(__DIR__ . '/includes/css/globals-theme.css')
-	);
+	// Local assets, collected here and enqueued in one call at the end. CDN assets
+	// stay on wp_enqueue_* below: plura_wp_enqueue has no in_footer option, and
+	// moving those render-blocking UMD bundles into the head would be a regression.
+	$assets = [
+		PB_PLUGIN_DIR . 'includes/css/globals.css'       => [],
+		PB_PLUGIN_DIR . 'includes/css/globals-theme.css' => [],
+	];
 
 	// Fancyapps CSS
 	wp_enqueue_style(
@@ -132,47 +130,22 @@ function publibalao_styles_and_scripts() {
 	}
 
 	if ( (is_single() || is_page()) && $post instanceof WP_Post && pb_has_shortcode($post->ID, 'pb-headings-nav') ) {
-		wp_enqueue_script(
-			'plura-layout-headings-nav',
-			plugins_url('/includes/js/plura-layout-headings-nav.js', __FILE__),
-			[],
-			filemtime(__DIR__ . '/includes/js/plura-layout-headings-nav.js'),
-			[ 'in_footer' => true ]
-		);
+		$assets[ PB_PLUGIN_DIR . 'includes/js/plura-layout-headings-nav.js' ] = [ 'handle' => 'layout-headings-nav' ];
 	}
 
-	// --- Provide window.pb_data early (HEAD), so module can read it ---
-	wp_register_script('pb-data', '', [], null, false);
-	wp_add_inline_script('pb-data', 'window.pb_data = ' . wp_json_encode($data) . ';', 'before');
-	wp_enqueue_script('pb-data');
+	// Entry module. `module => true` replaces the hand-rolled script_loader_tag filter
+	// this used to need; no classic deps, since the CDN globals it touches are plain
+	// footer scripts and a module always executes after those.
+	$assets[ PB_PLUGIN_DIR . 'includes/js/scripts.js' ] = [ 'handle' => 'core', 'module' => true ];
 
-	// --- Enqueue YOUR module (no deps on classic handles) ---
-	wp_enqueue_script(
-		'pb-core',
-		plugins_url('/includes/js/scripts.js', __FILE__),
-		[], // IMPORTANT: no 'fancybox' here, no classic deps
-		filemtime(__DIR__ . '/includes/js/scripts.js'),
-		[ 'in_footer' => true ]
-	);
+	plura_wp_enqueue( scripts: $assets, prefix: 'pb-' );
 
-	// Make it a module so imports work
-	wp_script_add_data('pb-core', 'type', 'module');
+	// Printed inline immediately before the module tag, so it is set before it runs.
+	if ( $data ) {
+		wp_localize_script('pb-core', 'pb_data', $data);
+	}
 }
 add_action('wp_enqueue_scripts', 'publibalao_styles_and_scripts');
-
-
-// 2) force type="module" on pb-core
-add_filter('script_loader_tag', function ($tag, $handle, $src) {
-  if ($handle !== 'pb-core') {
-    return $tag;
-  }
-
-  // Preserve id and other attrs WP may add; simplest is rebuild the tag:
-  return sprintf(
-    '<script type="module" src="%s"></script>' . "\n",
-    esc_url($src)
-  );
-}, 10, 3);
 
 
 

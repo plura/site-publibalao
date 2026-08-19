@@ -14,50 +14,45 @@ $MODULES = ['lang', /*'locations', */ 'pb'];
 
 function my_theme_enqueue_styles() {
 
-	global $sitepress;
+	$dir = get_stylesheet_directory();
 
-	$deps = ['fancybox'];
+	// plura_wp_data (plura plugin) already provides lang/restURL/restNonce, so pbobj
+	// is left carrying only what is genuinely publibalao-specific.
+	$localize_script_data = [];
 
-	$localize_script_data = [
-		'lang' => $sitepress->get_current_language(),
-		'pluginURL' => plugin_dir_url( __FILE__ ), 
-		'restURL' => rest_url(),
-		'restNonce' => wp_create_nonce('wp_rest')
+	// Parent stylesheet keeps its conventional unprefixed handle.
+	plura_wp_enqueue([ get_template_directory() . '/style.css' => ['handle' => 'parent-style'] ]);
+
+	$assets = [
+		$dir . '/includes/css/globals.css'        => [],
+		$dir . '/includes/css/globals-header.css' => [],
+		$dir . '/includes/css/fibaq-onepage.css'  => [],
+
+		// Single entry module: the page-scoped scripts are pulled in from here with
+		// dynamic import() instead of each getting its own conditional enqueue, so
+		// page detection lives in one place (body classes) rather than two.
+		// No fancybox dep — a module always executes after the classic footer
+		// scripts that define the global.
+		$dir . '/includes/js/scripts.js' => ['handle' => 'core', 'module' => true],
 	];
-
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-
-	wp_enqueue_style( 'pb-theme-globals', get_stylesheet_directory_uri() . '/includes/css/globals.css', [], time()  );
-
-	wp_enqueue_style( 'pb-theme-globals-header', get_stylesheet_directory_uri() . '/includes/css/globals-header.css' );
-
-	wp_enqueue_style( 'pb-theme-fibaq-onepage', get_stylesheet_directory_uri() . '/includes/css/fibaq-onepage.css' );
-
-	wp_enqueue_script('pb-theme-core', get_stylesheet_directory_uri() . '/includes/js/scripts.js', $deps, time() );
 
 	if( is_page( [3206, 3699] ) || ( is_page() && !in_array( get_the_ID(), [5639, 5697] ) && in_array( wp_get_post_parent_id(), [3206, 3699] ) ) ) {
 
-		wp_enqueue_style( 'pb-theme-fibaq', get_stylesheet_directory_uri() . '/includes/css/fibaq.css' );
+		$assets[ $dir . '/includes/css/fibaq.css' ] = [];
 
 		$localize_script_data['fibaq'] = pb_lang();
 
 		if( is_page( [3066, 3644] ) ) {
 
-			$deps_register = array_merge( $deps, ['pb-theme-core'] );
-
-	  	wp_enqueue_style( 'pb-theme-fibaq-register', get_stylesheet_directory_uri() . '/includes/css/fibaq-register.css' );
-
-	  	wp_enqueue_script('pb-theme-fibaq-register', get_stylesheet_directory_uri() . '/includes/js/fibaq-form.js', $deps_register );
+			$assets[ $dir . '/includes/css/fibaq-register.css' ] = [];
 
 		}
 
-	} else if( pb_single( [2065,3614, 2851,4355, 5639] ) || is_singular('pb_event') ) { 
+	} else if( pb_single( [2065,3614, 2851,4355, 5639] ) || is_singular('pb_event') ) {
 
-		wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css');	 
+		wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css');
 
 		wp_enqueue_script('leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js');
-
-		wp_enqueue_script('pb-theme-locations', get_stylesheet_directory_uri() . '/includes/js/locations.js', $deps );
 
 	} else if( pb_single( [2109] ) ) {
 
@@ -67,25 +62,27 @@ function my_theme_enqueue_styles() {
 
 	} else if( is_singular('mec-events') || is_tax('mec_category') ) {
 
-		wp_enqueue_style( 'pb-theme-fibaq-mec-event-pre', get_stylesheet_directory_uri() . '/includes/css/fibaq-mec-event-pre.css', [], filemtime( get_stylesheet_directory() . '/includes/css/fibaq-mec-event-pre.css' 	) );
+		$assets[ $dir . '/includes/css/fibaq-mec-event-pre.css' ] = [];
 
 		if( is_singular('mec-events') ) {
 
-			wp_enqueue_style( 'pb-theme-fibaq-mec-event', get_stylesheet_directory_uri() . '/includes/css/fibaq-mec-event.css', [], filemtime( get_stylesheet_directory() . '/includes/css/fibaq-mec-event.css' ) );
+			$assets[ $dir . '/includes/css/fibaq-mec-event.css' ] = [];
 
-			$path = '/includes/css/fibaq-mec-event/' . date('Y') . '.css';
-
-			if( file_exists( get_stylesheet_directory() . $path ) ) {
-
-				wp_enqueue_style( 'pb-theme-fibaq-mec-event-year', get_stylesheet_directory_uri() . $path, [], filemtime( get_stylesheet_directory() . $path ) );
-
-			}	
+			// plura_wp_enqueue silently skips local files that do not exist, so the
+			// year stylesheet needs no file_exists() guard of its own.
+			$assets[ $dir . '/includes/css/fibaq-mec-event/' . date('Y') . '.css' ] = ['handle' => 'fibaq-mec-event-year'];
 
 		}
 
 	}
 
-	wp_localize_script('pb-theme-core', 'pbobj', $localize_script_data);
+	plura_wp_enqueue( scripts: $assets, prefix: 'pb-theme-' );
+
+	if( $localize_script_data ) {
+
+		wp_localize_script('pb-theme-core', 'pbobj', $localize_script_data);
+
+	}
 
 }
 

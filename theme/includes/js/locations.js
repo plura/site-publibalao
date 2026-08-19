@@ -1,7 +1,7 @@
-function PBLocations({restPath, mapHolder, listHolder}) {
+export function PBLocations({restPath, mapHolder, listHolder}) {
 
 
-	let map, map_group, markers, ui_map, ui_list;
+	let map, map_group, marker, markers, ui_map, ui_list;
 
 
 	const

@@ -1,4 +1,4 @@
-function PBForm({config}) {
+export function PBForm({config}) {
 
 
 	let form = document.querySelector('form.wpcf7-form');
@@ -40,7 +40,7 @@ function PBForm({config}) {
 		//pt
 		if( !config.lang.match(/pt/) ) {
 
-			for( n in response.dictionary_pt2en ) {
+			for( const n in response.dictionary_pt2en ) {
 
 				const reg = new RegExp( `^${n}$` );
 
