@@ -1,4 +1,23 @@
 {
 	"mjml.allowIncludes": true,
-	"mjml.includePath": ["mail-templates"]
+	"mjml.includePath": ["mail-templates"],
+
+	// Index the shared Plura plugin so plura_wp_* resolve. Pointed at the real
+	// checkout rather than committed stubs: it is the source of truth and cannot
+	// drift. "wordpress" covers core functions.
+	"intelephense.environment.includePaths": [
+		"C:/Plura/dev/code/wp/plugins/plura/src"
+	],
+	"intelephense.stubs": [
+		"apache", "bcmath", "bz2", "calendar", "com_dotnet", "Core", "ctype", "curl",
+		"date", "dba", "dom", "enchant", "exif", "FFI", "fileinfo", "filter", "fpm",
+		"ftp", "gd", "gettext", "gmp", "hash", "iconv", "imap", "intl", "json", "ldap",
+		"libxml", "mbstring", "meta", "mysqli", "oci8", "odbc", "openssl", "pcntl",
+		"pcre", "PDO", "pdo_ibm", "pdo_mysql", "pdo_pgsql", "pdo_sqlite", "pgsql",
+		"Phar", "posix", "pspell", "readline", "Reflection", "session", "shmop",
+		"SimpleXML", "snmp", "soap", "sockets", "sodium", "SPL", "sqlite3", "ssh2",
+		"standard", "superglobals", "sysvmsg", "sysvsem", "sysvshm", "tidy", "tokenizer",
+		"xml", "xmlreader", "xmlrpc", "xmlwriter", "xsl", "Zend OPcache", "zip", "zlib",
+		"wordpress"
+	]
 }
