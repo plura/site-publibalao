@@ -21,7 +21,6 @@ async function _preloadLinkElement(a, acf_field, fallback_to_page, params) {
 		const data = await resolvePageFromHref(href, { acf_field, fallback_to_page, params });
 		_pbAgreementCache.set(key, data);
 		a.dataset.pbResolved = '1';
-		console.debug('[publibalao/page] preloaded', href, data);
 	} catch (err) {
 		console.warn('[publibalao/page] preload error', href, err);
 	}
@@ -31,8 +30,7 @@ async function _preloadLinkElement(a, acf_field, fallback_to_page, params) {
  * Internal: deliver resolved page result to the element + handler.
  * @private
  */
-function _deliverResolvedPage(el, data, handler, cached = false) {
-	console.log(`[publibalao/page]${cached ? ' (cached)' : ''}`, data);
+function _deliverResolvedPage(el, data, handler) {
 	el.dataset.pbResolved = '1';
 	if (typeof handler === 'function') {
         handler({
@@ -73,14 +71,14 @@ export function initAgreementLinksWithPreload({
 
 			if (_pbAgreementCache.has(key)) {
 				const cached = _pbAgreementCache.get(key);
-				_deliverResolvedPage(a, cached, handler, true);
+				_deliverResolvedPage(a, cached, handler);
 				return;
 			}
 
 			try {
 				const data = await resolvePageFromHref(href, { acf_field, fallback_to_page, params });
 				_pbAgreementCache.set(key, data);
-				_deliverResolvedPage(a, data, handler, false);
+				_deliverResolvedPage(a, data, handler);
 			} catch (err) {
 				console.error('[publibalao/page] error', err);
 			}

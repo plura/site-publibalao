@@ -1,6 +1,6 @@
 // api.js
 import { buildParamsFromHref } from './utils.js';
-console.log('ewqrewrew');
+
 /**
  * Resolve a page via the Publibalao REST API.
  *
@@ -17,7 +17,9 @@ export async function resolvePage({
 	page_path,
 	acf_field,
 	fallback_to_page = true,
-	base = '/wp-json/publibalao/v1/page',
+	// Derived from the localized REST root rather than hardcoded: WordPress lives in
+	// a /wp/ subdirectory here, so a root-relative /wp-json/ path does not resolve.
+	base = `${window.plura_wp_data?.restURL ?? '/wp-json/'}publibalao/v1/page`,
 	params: extraParams = {}
 } = {}) {
 	const params = new URLSearchParams();
@@ -39,7 +41,6 @@ export async function resolvePage({
 		const text = await res.text().catch(() => '');
 		throw new Error(`[PublibalaoAPI] HTTP ${res.status}: ${text || 'Request failed'}`);
 	}
-	console.log('solved / returning');
 	return res.json();
 }
 

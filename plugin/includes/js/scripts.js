@@ -29,27 +29,6 @@ const observer = new ResizeObserver(entries => {
 observer.observe(document.body);
 
 
-const page = (id) => {
-
-	const ids = Array.isArray(id) ? id : [id];
-
-	for (let [index, value] of ids.entries()) {
-
-		if (document.body.classList.contains(value)) {
-			return true;
-		}
-
-	}
-
-	return false;
-
-};
-
-
-//const target = document.querySelector('.bcp-slider[data-id="intro1"'), timeout = 5000, url = '';
-
-console.log('pb scripts loaded');
-
 //Image Carousel
 const carousel_targets = document.querySelectorAll('.pb-carousel-images');
 
@@ -74,7 +53,7 @@ if (carousel_targets.length) {
 
 //popup buttons
 document.querySelectorAll('.pb-button-content-popup').forEach(element => {
-	console.log(element);
+
 	resolvePage({ id: element.dataset.pbTargetId, acf_field: source.acf_field, params: source.params }).then(data => {
 		element.addEventListener('click', event => {
 			event.preventDefault();
@@ -113,7 +92,7 @@ if (document.body.classList.contains('single-mec-events')) {
 		fallback_to_page: true,
 		params: source.params,
 		handler: ({ title, content, page_id }) => {
-			popOpenAndUpdatePopup(popid, { title, content, id: page_id });
+			popOpenAndUpdatePopup(source.popup_id, { title, content, id: page_id });
 		}
 	});
 

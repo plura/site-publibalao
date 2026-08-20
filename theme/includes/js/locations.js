@@ -29,7 +29,7 @@ export function PBLocations({restPath, mapHolder, listHolder}) {
 			if( ui_list ) {
 
 				( ui_list_nav = ui_list.appendChild( document.createElement('ul') ) ).classList.add( `${ ul_id }-nav` );
-				
+
 			}
 
 
@@ -46,12 +46,16 @@ export function PBLocations({restPath, mapHolder, listHolder}) {
 				markers.push( marker );
 
 
+				//ui_list_nav only exists when a listHolder was passed in
+				if( ui_list_nav ) {
 
-				( ui_list_nav_item = ui_list_nav.appendChild( document.createElement('li') ) ).classList.add(`${ul_id}-nav-item`);
+					( ui_list_nav_item = ui_list_nav.appendChild( document.createElement('li') ) ).classList.add(`${ul_id}-nav-item`);
 
-				( ui_list_nav_item_trigger = ui_list_nav_item.appendChild( document.createElement('a') ) ).classList.add(`${ ul_id }-nav-item-trigger`);
+					( ui_list_nav_item_trigger = ui_list_nav_item.appendChild( document.createElement('a') ) ).classList.add(`${ ul_id }-nav-item-trigger`);
 
-				ui_list_nav_item_trigger.textContent = location.name;
+					ui_list_nav_item_trigger.textContent = location.name;
+
+				}
 
 			});
 
@@ -70,7 +74,7 @@ export function PBLocations({restPath, mapHolder, listHolder}) {
 			map = L.map( map_id, {scrollWheelZoom: false} );
 
 			//L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+			L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
 
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
@@ -121,9 +125,6 @@ export function PBLocations({restPath, mapHolder, listHolder}) {
 			}
 
 		};
-
-
-	console.log(restPath + 'pb/v1/location/' );
 
 
 	fetch(restPath + 'pb/v1/location/').then(response => response.json()).then(response => init(response));
