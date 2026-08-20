@@ -1,48 +1,10 @@
 <?php
 
-function p_attributes( $atts, $prefix = false ) {
-
-	$a = [];
-
-	foreach($atts as $k => $v) {
-
-		if( $k === 'class' && is_array( $v ) ) {
-
-			$v = implode(' ', $v);
-
-		}
-
-		$value = $k . "=\"" . $v . "\"";
-
-		if( $prefix ) {
-
-			$value = "data-" . $value;
-
-		}
-
-		$a[] = $value;
-
-	}
-
-	return implode(' ', $a);
-
-}
-
-
-function p_thumbnail( $postID, $size = 'large' ) {
-
-	$img = has_post_thumbnail( $postID );
-
-	if( $img ) {
-
-		return wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), $size);
-
-	}
-
-	return false;
-
-}
-
+/**
+ * Remnant of the old vendored plura copy, kept only for the five [p-*] shortcodes
+ * below — everything else it used to carry now lives in the Plura plugin. Drop the
+ * file once post content is confirmed clear of those shortcodes.
+ */
 
 /**
  * get all the breadcrumbs for an object (post, page or term)
@@ -162,7 +124,7 @@ function p_breadcrumbs( $object = false, $self = false, $id = false, $html = tru
 
 					$atts = ['class' => implode(' ', $classes)];
 
-					$g[] = "<li " . p_attributes( $atts ) . ">" . $c . "</li>";
+					$g[] = "<li " . plura_attributes( $atts ) . ">" . $c . "</li>";
 
 				}
 
@@ -178,7 +140,7 @@ function p_breadcrumbs( $object = false, $self = false, $id = false, $html = tru
 
 			}
 
-			return "<div " . p_attributes( $atts ) . ">" . implode('', $return) . "</div>";
+			return "<div " . plura_attributes( $atts ) . ">" . implode('', $return) . "</div>";
 
 		}
 
@@ -274,7 +236,7 @@ function p_tags( $post, $html = true ) {
 
 					$atts_link = ['title' => $term->name, 'href' => get_term_link( $term )];
 
-					$tags[] = "<li " . p_attributes( $atts ) . "><a " . p_attributes( $atts_link ) . ">" . $term->name . "</a></li>";
+					$tags[] = "<li " . plura_attributes( $atts ) . "><a " . plura_attributes( $atts_link ) . ">" . $term->name . "</a></li>";
 
 				} else {
 
@@ -288,7 +250,7 @@ function p_tags( $post, $html = true ) {
 
 				$atts = ['class' => 'p-tags', 'data-taxonomy' => $post_taxonomies[0]];
 
-				return "<ul " . p_attributes( $atts ) . ">" . implode('', $tags) . "</ul>";
+				return "<ul " . plura_attributes( $atts ) . ">" . implode('', $tags) . "</ul>";
 
 			}
 
@@ -444,7 +406,7 @@ function p_posts( array $args ) {
 
 		foreach( $query->posts as $post ) {
 
-			$img = p_thumbnail( $post->ID, $args['featured_image_size'] );
+			$img = plura_wp_thumbnail( $post->ID, $args['featured_image_size'] );
 
 			$classes = ["p-post"];
 
@@ -456,7 +418,7 @@ function p_posts( array $args ) {
 
 			$atts = ['class' => implode(' ', $classes)];
 
-			$html[] = "<$subtag " . p_attributes( $atts ) . "\">\n";
+			$html[] = "<$subtag " . plura_attributes( $atts ) . "\">\n";
 
 
 				if( $img ) {
@@ -516,7 +478,7 @@ function p_posts( array $args ) {
 
 		$atts = ['class' => implode(' ', $html_classes) ];
 
-		return "<div " . p_attributes( $atts ) . ">" . implode('', $html) . "</div>";
+		return "<div " . plura_attributes( $atts ) . ">" . implode('', $html) . "</div>";
 
 	}
 
@@ -597,7 +559,7 @@ function p_post_link($post, $html, $classes = false) {
 
 	}
 
-	return "<a " . p_attributes( $atts ) . ">\n" . $html . "</a>";
+	return "<a " . plura_attributes( $atts ) . ">\n" . $html . "</a>";
 
 } 
 
@@ -795,7 +757,7 @@ function p_date_archive() {
 
 		$atts['class'] = 'p-date-archive';
 
-		return "<ul " . p_attributes( $atts ) . ">" . wp_get_archives( array('echo' => 0, 'type' => 'yearly', 'post_type' => $post_type ) ) . "</ul>";
+		return "<ul " . plura_attributes( $atts ) . ">" . wp_get_archives( array('echo' => 0, 'type' => 'yearly', 'post_type' => $post_type ) ) . "</ul>";
 
 	}
 
