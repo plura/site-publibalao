@@ -8,7 +8,7 @@ add_action( 'after_setup_theme', function() {
 
 
 
-$MODULES = ['lang', /*'locations', */ 'pb'];
+$MODULES = ['lang', /*'locations', */ 'pages', 'pb'];
 
 
 
