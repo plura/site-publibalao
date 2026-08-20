@@ -1,4 +1,4 @@
-function createTreeNavigation({ target = document.body, holder = document.body, threshold = 0.5, highestHeading = 'h2' } = {}) {
+export function createTreeNavigation({ target = document.body, holder = document.body, threshold = 0.5, highestHeading = 'h2' } = {}) {
     // Calculate the level of the highest heading (e.g., h2 -> 2)
     const highestHeadingLevel = parseInt(highestHeading.replace('h', ''));
 

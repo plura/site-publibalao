@@ -94,6 +94,8 @@ const pb_headings_nav_holder = document.querySelector('.pb-headings-nav'), pb_he
 
 if (pb_headings_nav_holder && pb_headings_nav_target) {
 
+	const { createTreeNavigation } = await import('./plura-layout-headings-nav.js');
+
 	createTreeNavigation({ target: pb_headings_nav_target, holder: pb_headings_nav_holder, threshold: 0.6 });
 
 }

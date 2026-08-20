@@ -50,9 +50,11 @@ function my_theme_enqueue_styles() {
 
 	} else if( pb_single( [2065,3614, 2851,4355, 5639] ) || is_singular('pb_event') ) {
 
-		wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css');
-
-		wp_enqueue_script('leaflet', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js');
+		// Unprefixed: pb_add_integrity() below matches the 'leaflet' handle by name.
+		plura_wp_enqueue([
+			'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css' => [ 'handle' => 'leaflet' ],
+			'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'  => [ 'handle' => 'leaflet' ],
+		]);
 
 	} else if( pb_single( [2109] ) ) {
 

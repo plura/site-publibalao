@@ -55,88 +55,41 @@ function publibalao_styles_and_scripts() {
 		];
 	}
 
-	// Local assets, collected here and enqueued in one call at the end. CDN assets
-	// stay on wp_enqueue_* below: plura_wp_enqueue has no in_footer option, and
-	// moving those render-blocking UMD bundles into the head would be a regression.
+	// CDN bundles, enqueued unprefixed: the handles are referenced as deps here and
+	// matched by name in the theme's integrity filter. plura_wp_enqueue leaves
+	// external URLs unversioned, which is right — the URL already pins the version.
+	$cdn = [
+		'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css'    => [ 'handle' => 'fancybox' ],
+		'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js' => [ 'handle' => 'fancybox' ],
+	];
+
+	// Local assets. Paths rather than URLs, so filemtime versioning applies.
 	$assets = [
 		PB_PLUGIN_DIR . 'includes/css/globals.css'       => [],
 		PB_PLUGIN_DIR . 'includes/css/globals-theme.css' => [],
 	];
 
-	// Fancyapps CSS
-	wp_enqueue_style(
-		'fancybox',
-		'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css',
-		[],
-		'5.0'
-	);
-
-	// --- Classic (UMD) scripts as globals ---
-	wp_enqueue_script(
-		'fancybox',
-		'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js',
-		[],
-		'5.0',
-		[ 'in_footer' => true ]
-	);
-
 	// Optionally load carousel stuff only when needed
 	if ( (is_single() || is_page()) && $post instanceof WP_Post && pb_has_shortcode($post->ID, 'pb-carousel-images') ) {
 
-		wp_enqueue_style(
-			'carousel',
-			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css',
-			[ 'fancybox' ],
-			'5.0'
-		);
+		$cdn += [
+			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css'                 => [ 'handle' => 'carousel',          'deps' => [ 'fancybox' ] ],
+			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js'              => [ 'handle' => 'carousel',          'deps' => [ 'fancybox' ] ],
+			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css'          => [ 'handle' => 'carousel-thumbs',   'deps' => [ 'carousel' ] ],
+			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js'       => [ 'handle' => 'carousel-thumbs',   'deps' => [ 'carousel' ] ],
+			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/carousel/carousel.autoplay.css'     => [ 'handle' => 'carousel-autoplay', 'deps' => [ 'carousel' ] ],
+			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/carousel/carousel.autoplay.umd.js'  => [ 'handle' => 'carousel-autoplay', 'deps' => [ 'carousel' ] ],
+		];
 
-		wp_enqueue_script(
-			'carousel',
-			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js',
-			[ 'fancybox' ],
-			'5.0',
-			[ 'in_footer' => true ]
-		);
-
-		wp_enqueue_style(
-			'carousel-thumbs',
-			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css',
-			[ 'carousel' ],
-			'5.0'
-		);
-
-		wp_enqueue_script(
-			'carousel-thumbs',
-			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js',
-			[ 'carousel' ],
-			'5.0',
-			[ 'in_footer' => true ]
-		);
-
-		wp_enqueue_style(
-			'carousel-autoplay',
-			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/carousel/carousel.autoplay.css',
-			[ 'carousel' ],
-			'5.0.36'
-		);
-
-		wp_enqueue_script(
-			'carousel-autoplay',
-			'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/carousel/carousel.autoplay.umd.js',
-			[ 'carousel' ],
-			'5.0.36',
-			[ 'in_footer' => true ]
-		);
-	}
-
-	if ( (is_single() || is_page()) && $post instanceof WP_Post && pb_has_shortcode($post->ID, 'pb-headings-nav') ) {
-		$assets[ PB_PLUGIN_DIR . 'includes/js/plura-layout-headings-nav.js' ] = [ 'handle' => 'layout-headings-nav' ];
 	}
 
 	// Entry module. `module => true` replaces the hand-rolled script_loader_tag filter
-	// this used to need; no classic deps, since the CDN globals it touches are plain
-	// footer scripts and a module always executes after those.
+	// this used to need. plura-layout-headings-nav.js is no longer enqueued here —
+	// scripts.js imports it once it has found a holder, so the shortcode check that
+	// used to gate it is not duplicated in PHP.
 	$assets[ PB_PLUGIN_DIR . 'includes/js/scripts.js' ] = [ 'handle' => 'core', 'module' => true ];
+
+	plura_wp_enqueue( scripts: $cdn );
 
 	plura_wp_enqueue( scripts: $assets, prefix: 'pb-' );
 

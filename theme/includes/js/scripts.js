@@ -49,7 +49,13 @@ document.querySelectorAll(':is(.pb-team-member, .pb-sponsor) img').forEach( elem
 
 
 //Fancybox
-Fancybox.bind('.wp-block-image a');
+//guarded: this is one entry module now, so a missing CDN global here would abort
+//every page-specific branch below it
+if( typeof Fancybox !== 'undefined' ) {
+
+	Fancybox.bind('.wp-block-image a');
+
+}
 
 
 
