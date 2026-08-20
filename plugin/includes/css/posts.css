@@ -1,0 +1,108 @@
+/**
+ * [plura-wp-posts class="pb-grid …" context="pb-grid"] — the grid replacing [pb-grid].
+ *
+ * The two hooks do different jobs. The .pb-grid class is what the wrapper inherits
+ * its grid/column/fullwidth rules from, unchanged from globals.css, and what the JS
+ * still reaches for. [data-context] is what these rules key on: it is set from the
+ * same argument that drives the entry filter, so the styling cannot end up applied
+ * to items the filter did not shape — a class alone is author-supplied and could be
+ * forgotten on either side.
+ *
+ * Compounding with .plura-wp-posts also keeps all of it off the old grid while both
+ * render, and off the pilots list, which comes through plura_wp_posts as well.
+ */
+
+/* the item is the <a> itself, since the shortcode passes link="1" */
+.plura-wp-posts[data-context="pb-grid"] .plura-wp-post {
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	/* .pb-el carried this before, and aspect-ratio resolves against whichever box
+	   box-sizing names, so it is not cosmetic here */
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* the old zoom grew a background, which clips itself; a scaled child does not */
+	overflow: hidden;
+	padding: var(--pb-globals-services-service-pad);
+	position: relative;
+}
+
+/* Replaces the ::before that inherited an inline background-image. A real <img>
+   brings srcset and lazy loading with it, and object-fit crops the way the old
+   background-size: auto 100% did. */
+.plura-wp-posts[data-context="pb-grid"] .plura-wp-post-featured-image {
+	height: 100%;
+	inset: 0;
+	object-fit: cover;
+	position: absolute;
+	transition: transform .4s ease-out;
+	width: 100%;
+	z-index: 0;
+}
+
+.plura-wp-posts[data-context="pb-grid"] .plura-wp-post:hover .plura-wp-post-featured-image {
+	transform: scale(1.2);
+}
+
+/* Only over an image, matching the old [style] gate: the overlay took its `content`
+   from a rule keyed on the inline background-image, so an item with no thumbnail
+   never drew one. */
+.plura-wp-posts[data-context="pb-grid"] .plura-wp-post:has(.plura-wp-post-featured-image)::after {
+	background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .2) 85%);
+	content: '';
+	inset: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+.plura-wp-posts[data-context="pb-grid"] :is(.plura-wp-post-title, .pb-grid-label) {
+	color: white;
+	font-weight: var(--pb-globals-font-weight-600);
+	position: relative;
+	text-align: center;
+	z-index: 2;
+}
+
+.plura-wp-posts[data-context="pb-grid"] .plura-wp-post-title {
+	font-size: var(--pb-globals-font-size-h2);
+	line-height: initial;
+	text-transform: uppercase;
+}
+
+.plura-wp-posts[data-context="pb-grid"] .pb-grid-label {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-size: var(--pb-globals-font-size-small);
+	text-transform: uppercase;
+}
+
+.plura-wp-posts[data-context="pb-grid"] .pb-grid-label-more {
+	font-weight: var(--pb-globals-font-weight-700);
+}
+
+.plura-wp-posts[data-context="pb-grid"] .pb-grid-label p:last-child::before {
+	background-color: white;
+	content: '';
+	display: block;
+	height: 2px;
+	margin: 0 auto 15px;
+	width: 10%;
+}
+
+@media (min-width: 991px) {
+
+	.plura-wp-posts[data-context="pb-grid"] .plura-wp-post {
+		aspect-ratio: 3 / 2;
+	}
+
+	.plura-wp-posts[data-context="pb-grid"] .plura-wp-post-title {
+		font-size: var(--pb-globals-font-size-h1);
+	}
+
+	.plura-wp-posts[data-context="pb-grid"] .pb-grid-label {
+		font-size: var(--pb-globals-font-size-h5);
+	}
+
+}

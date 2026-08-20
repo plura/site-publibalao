@@ -43,6 +43,7 @@ add_action('plugins_loaded', function () {
 		'includes/events',
 		'includes/locations',
 		'includes/media',
+		'includes/posts',
 		'includes/data',
 		'includes/import-map',
 		'includes/teams-and-pilots',
@@ -81,6 +82,7 @@ function publibalao_styles_and_scripts() {
 	$assets = [
 		PB_PLUGIN_DIR . 'includes/css/globals.css'       => [],
 		PB_PLUGIN_DIR . 'includes/css/globals-theme.css' => [],
+		PB_PLUGIN_DIR . 'includes/css/posts.css'         => [],
 	];
 
 	// Optionally load carousel stuff only when needed

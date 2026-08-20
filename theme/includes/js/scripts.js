@@ -95,17 +95,18 @@ if( page( ['wpmlobj-id-14', 'single-pb_event'] ) ) {
 
 		const observer = new ResizeObserver( entries => {
 
-			let grid = document.querySelector('#services-holder .pb-grid'),
-				grid_item = grid.querySelector('.pb-grid-item:last-child'),
+			//the last child is the item whichever markup .pb-grid is holding, so this
+			//survives the migration to [plura-wp-posts]
+			const grid = document.querySelector('#services-holder .pb-grid'),
+				grid_item = grid?.querySelector(':scope > :last-child'),
 				slider_holder = document.getElementById('service-weddings-video-holder'),
-				slider = slider_holder.querySelector('rs-module-wrap'); 
+				slider = slider_holder?.querySelector('rs-module-wrap');
 
-			if( slider ) {		 
+			if( slider ) {
 
-				[slider_holder, grid_item] 
+				[slider_holder, grid_item].filter( Boolean )
 
 				.forEach( element => element.style.setProperty('--sliderh', `${slider.offsetHeight}px`) );
-
 
 			}
 
