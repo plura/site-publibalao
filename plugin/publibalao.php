@@ -47,10 +47,15 @@ add_action('plugins_loaded', function () {
 
 	];
 
-	// admin: true keeps the behaviour of the foreach this replaces — Divi fetches
-	// rendered content over admin-ajax, where is_admin() is true and the modules'
-	// shortcodes would otherwise go unregistered.
-	plura_includes($modules, __DIR__, admin: true);
+	// Frontend only, and it has to stay that way: plura.php loads its own modules
+	// without the admin flag, so plura_attributes/plura_wp_thumbnail/plura_wpml_id/
+	// plura_wp_posts do not exist in wp-admin. These modules call them 25 times over,
+	// so loading them there means a fatal on any admin request that renders one —
+	// which is what stopped Divi saving.
+	//
+	// The foreach this replaced got away with loading in admin because it was calling
+	// the vendored p_* copies, which it loaded itself.
+	plura_includes($modules, __DIR__);
 
 	add_action('wp_enqueue_scripts', 'publibalao_styles_and_scripts');
 
