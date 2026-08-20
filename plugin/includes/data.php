@@ -30,7 +30,7 @@ function pb_content( WP_REST_Request $request ) {
 
 		foreach( $ids as $id ) {
 			
-			$source_id = empty( $parameters['lang'] ) ? $id : p_wpml_id($id, $parameters['lang']);
+			$source_id = empty( $parameters['lang'] ) ? $id : plura_wpml_id($id, $parameters['lang']);
 
 			$content = p_post_data( $source_id );
 

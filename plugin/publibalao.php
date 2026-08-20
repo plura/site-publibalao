@@ -38,10 +38,9 @@ add_action('plugins_loaded', function () {
 	//shortcodes would otherwise go unregistered
 	plura_includes([
 
+		//all that survives of the old vendored plura copy: five [p-*] shortcodes that
+		//may still be in post content. Drop it once that is confirmed.
 		'p/p',
-		'p/modules/p-revslider',
-		'p/modules/p-wp',
-		'p/modules/p-wpml',
 
 		'includes/api',
 		'includes/core',

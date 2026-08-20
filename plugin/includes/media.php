@@ -63,7 +63,7 @@ function pb_grid( $args ) {
 
 		}
 
-		$html = "<div " . p_attributes( $atts ) . ">";
+		$html = "<div " . plura_attributes( $atts ) . ">";
 
 		foreach( $query->posts as $post ) {
 
@@ -111,7 +111,7 @@ function pb_grid_item( $id ) {
 
 	$atts_title = ['class' => 'pb-grid-item-title pb-el'];
 
-	$img = p_thumbnail( $post->ID );
+	$img = plura_wp_thumbnail( $post->ID );
 
 	if( $img ) {
 
@@ -119,13 +119,13 @@ function pb_grid_item( $id ) {
 
 	}
 
-	$html = "<a " . p_attributes( $atts ) . ">";
+	$html = "<a " . plura_attributes( $atts ) . ">";
 
-		$html .= "<h3 " . p_attributes($atts_title) . ">" . $post->post_title . "</h3>";
+		$html .= "<h3 " . plura_attributes($atts_title) . ">" . $post->post_title . "</h3>";
 
 	if( $post_label ) {
 
-		$html .= "<div " . p_attributes( $atts_label ) . ">" . $post_label . "</div>";
+		$html .= "<div " . plura_attributes( $atts_label ) . ">" . $post_label . "</div>";
 
 	}
 

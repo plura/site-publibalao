@@ -97,7 +97,7 @@ function pb_event_locations( $id, string|int|bool $link = false ) {
 
 			}
 
-			$img = p_thumbnail( $location->ID );
+			$img = plura_wp_thumbnail( $location->ID );
 
 			if( $img ) {
 
@@ -105,7 +105,7 @@ function pb_event_locations( $id, string|int|bool $link = false ) {
 
 			}
 
-			$html[] = "<a " . p_attributes($atts) . ">" . $location->post_title . "</a>";
+			$html[] = "<a " . plura_attributes($atts) . ">" . $location->post_title . "</a>";
 
 		endwhile;
 

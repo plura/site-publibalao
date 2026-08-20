@@ -209,7 +209,7 @@ add_filter('pb_shortcode_check', function ($has_shortcode, $post_id, $shortcode)
 
 	if( ( is_single() || is_page() ) &&  has_shortcode($post->post_content, 'pb-post-content') ) {
 
-		$source_id = get_field('pb-source-id', p_wpml_id() );
+		$source_id = get_field('pb-source-id', plura_wpml_id() );
 
 		if( $source_id ) {
 

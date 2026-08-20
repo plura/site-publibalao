@@ -137,7 +137,7 @@ function pb_resolve_page(WP_REST_Request $req): WP_REST_Response
 	// your wrapper mapping to default language ID
 	if ($lang_default && $lang_default !== $lang_current) {
 
-		$acf_target_id_default = p_wpml_id($page_id, $lang_default);
+		$acf_target_id_default = plura_wpml_id($page_id, $lang_default);
 
 		if ($acf_target_id_default) {
 			$acf_target_id = $acf_target_id_default;
@@ -174,7 +174,7 @@ function pb_resolve_page(WP_REST_Request $req): WP_REST_Response
 	// If linked_id was translated to the current language, use that
 	if ($lang_current && $lang_current === 'en' && $lang_current !== $lang_default) {
 
-		$linked_id_current = p_wpml_id($linked_id, $lang_current);
+		$linked_id_current = plura_wpml_id($linked_id, $lang_current);
 
 		if ($linked_id_current) {
 			$linked_id = $linked_id_current;

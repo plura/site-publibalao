@@ -18,8 +18,8 @@
 
     global $sitepress;
 
-    $target_id = empty( $sitepress ) ? $id : p_wpml_id($id, $sitepress->get_current_language());
-    $popup_id = empty( $sitepress ) ? $popup : p_wpml_id($popup, $sitepress->get_current_language());
+    $target_id = empty( $sitepress ) ? $id : plura_wpml_id($id, $sitepress->get_current_language());
+    $popup_id = empty( $sitepress ) ? $popup : plura_wpml_id($popup, $sitepress->get_current_language());
 
     $atts = [
         'label' => $label,
@@ -38,7 +38,7 @@
 
     $atts['class'] = implode(' ', $classes);
 
-    return "<a " . p_attributes( $atts ) . ">" . $label . "</a>";
+    return "<a " . plura_attributes( $atts ) . ">" . $label . "</a>";
 
  }
 
@@ -70,7 +70,7 @@
 
     }
 
-   return "<div " . p_attributes( $a ) . "></div>";
+   return "<div " . plura_attributes( $a ) . "></div>";
 
  });
 
@@ -148,16 +148,16 @@ add_shortcode( 'pb-post-content', function( $args ) {
 
 	$id = $atts['id'];
 
-		//echo 'id: ' . $id . ":" . p_wpml_id();
+		//echo 'id: ' . $id . ":" . plura_wpml_id();
 
 	if ( empty( $id ) ) {
-		$id = get_field( 'pb-source-id', p_wpml_id() );
+		$id = get_field( 'pb-source-id', plura_wpml_id() );
 	}
 
-	//echo 'id: ' . $id . ":" . p_wpml_id();
+	//echo 'id: ' . $id . ":" . plura_wpml_id();
 
 	if ( ! empty( $id ) ) {
-		$id = p_wpml_id( $id, false );
+		$id = plura_wpml_id( $id, false );
 		return pb_post_content( $id, $allow_draft );
 	}
 

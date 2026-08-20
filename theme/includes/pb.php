@@ -28,7 +28,7 @@ function pb_social_icons( $atts ) {
 
 				}
 
-				$html .= "<li " . p_attributes($li_atts) . "><a " . p_attributes($a_atts) . "><i " . p_attributes($i_atts) . "></i></a></li>";
+				$html .= "<li " . plura_attributes($li_atts) . "><a " . plura_attributes($a_atts) . "><i " . plura_attributes($i_atts) . "></i></a></li>";
 
 			endif;
 	
