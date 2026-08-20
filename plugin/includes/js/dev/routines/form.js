@@ -1,93 +1,14 @@
 /**
- * Development-only form filler.
+ * Dev routine: fill a Contact Form 7 form from a dataset.
  *
- * Knows about Contact Form 7 markup — including the conditional-group and
- * multi-step add-ons this site uses — but nothing about any particular form:
- * the values come from the caller, so the same engine serves every CF7 form on
- * any Plura site.
+ * Knows about CF7 markup — including the conditional-group and multi-step
+ * add-ons — but nothing about any particular form: the values come from the
+ * caller, so the same routine serves every CF7 form on any Plura site.
+ *
+ *   ?dev=form&devid=<dataset>
  */
 
-
-/**
- * Build a File for a [file] input. Contents are placeholder bytes — CF7 validates
- * on extension and size, not on the file actually being a readable document.
- *
- * @param {string} name File name; its extension decides the generated type.
- * @param {object} [options]
- * @param {string} [options.type] MIME type override.
- * @return {File}
- */
-export function file(name, { type } = {}) {
-
-	const ext = name.split('.').pop().toLowerCase();
-
-	// A 1x1 transparent PNG, so image/* uploads survive anything that sniffs them.
-	const png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==';
-
-	if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(ext)) {
-
-		const bytes = Uint8Array.from(atob(png), c => c.charCodeAt(0));
-
-		return new File([bytes], name, { type: type ?? 'image/png' });
-
-	}
-
-	// Minimal PDF skeleton: no xref table, so it will not open in a reader, but it
-	// carries the right magic bytes for anything that checks them.
-	if (ext === 'pdf') {
-
-		const pdf = '%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n' +
-			'2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj\n' +
-			'3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 200 200]>>endobj\n' +
-			'trailer<</Root 1 0 R>>\n%%EOF\n';
-
-		return new File([pdf], name, { type: type ?? 'application/pdf' });
-
-	}
-
-	return new File([`placeholder for ${name}`], name, { type: type ?? 'text/plain' });
-
-}
-
-
-/**
- * Poll until a predicate returns something truthy.
- *
- * Needed because CF7 fields are not always ready when the form is: this site
- * populates the country <select> from a REST call, so its options appear well
- * after DOMContentLoaded.
- *
- * @param {Function} fn Predicate; its return value resolves the promise.
- * @param {object} [options]
- * @param {number} [options.timeout] Milliseconds before giving up.
- * @param {number} [options.interval] Milliseconds between attempts.
- * @return {Promise<*>} Resolves with the predicate's value, or null on timeout.
- */
-export function waitFor(fn, { timeout = 5000, interval = 50 } = {}) {
-
-	return new Promise(resolve => {
-
-		const started = Date.now();
-
-		const tick = () => {
-
-			const value = fn();
-
-			if (value) {
-				resolve(value);
-			} else if (Date.now() - started > timeout) {
-				resolve(null);
-			} else {
-				setTimeout(tick, interval);
-			}
-
-		};
-
-		tick();
-
-	});
-
-}
+import { waitFor } from '../utils.js';
 
 
 /**
@@ -157,7 +78,7 @@ async function setControl(elements, value) {
 		// options whose value matches. Clicked rather than assigned, so CF7's own
 		// handlers — and the conditional-group logic — see a real interaction.
 		const wanted = typeof value === 'boolean'
-			? (value ? [first.value] : [])
+			? []
 			: (Array.isArray(value) ? value : [value]).map(String);
 
 		elements.forEach(element => {
@@ -213,7 +134,7 @@ async function setControl(elements, value) {
  * of a multi-step form, so one pass fills the whole thing.
  *
  * @param {HTMLFormElement} form
- * @param {object} values Field name => value. Files come from file().
+ * @param {object} values Field name => value. Files come from utils.file().
  * @param {object} [options]
  * @param {boolean} [options.groups] Fill fields inside hidden conditional groups too.
  * @return {Promise<{filled: string[], skipped: string[], missing: string[]}>}
@@ -265,5 +186,38 @@ export function nextStep(form) {
 	button?.click();
 
 	return !!button;
+
+}
+
+
+/**
+ * Entry point called by the dispatcher.
+ *
+ * @param {object} context
+ * @param {HTMLFormElement} context.target Form to fill.
+ * @param {object} context.data Dataset resolved from ?devid=.
+ * @param {URLSearchParams} context.params Full query string, for routine flags.
+ * @return {Promise<object|undefined>}
+ */
+export async function run({ target, data, params }) {
+
+	if (!target) {
+
+		console.error('[pb/dev] form routine needs a target form');
+
+		return;
+
+	}
+
+	if (!data) {
+
+		console.error('[pb/dev] form routine needs a dataset — pass ?devid=');
+
+		return;
+
+	}
+
+	//?devgroups=1 fills conditional groups that are currently closed
+	return fillForm(target, data, { groups: params?.get('devgroups') === '1' });
 
 }

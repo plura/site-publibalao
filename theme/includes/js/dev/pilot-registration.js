@@ -1,14 +1,14 @@
 /**
  * Test values for the FIBAQ pilot registration form (pages 3066 / 3644).
  *
- * Reached as ?dev=pilot-registration — the query value is this file's name. Copy
+ * Reached as ?dev=form&devid=pilot-registration — devid is this file's name. Copy
  * to pilot-registration.<variant>.js for a second dataset against the same form.
  *
  * crew-name2/3 live in conditional groups and are only filled when those groups
  * are open; the filler skips them otherwise rather than posting orphan values.
  */
 
-import { file } from 'pb/dev/form.js';
+import { file } from 'pb/dev/utils.js';
 
 
 export default {
