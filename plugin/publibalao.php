@@ -38,10 +38,6 @@ add_action('plugins_loaded', function () {
 	//shortcodes would otherwise go unregistered
 	plura_includes([
 
-		//all that survives of the old vendored plura copy: five [p-*] shortcodes that
-		//may still be in post content. Drop it once that is confirmed.
-		'p/p',
-
 		'includes/api',
 		'includes/core',
 		'includes/events',
