@@ -33,10 +33,7 @@ add_action('plugins_loaded', function () {
 
 	}
 
-	//admin: true keeps the behaviour of the foreach this replaces — Divi fetches
-	//rendered content over admin-ajax, where is_admin() is true and the modules'
-	//shortcodes would otherwise go unregistered
-	plura_includes([
+	$modules = [
 
 		'includes/api',
 		'includes/core',
@@ -48,7 +45,25 @@ add_action('plugins_loaded', function () {
 		'includes/import-map',
 		'includes/teams-and-pilots',
 
-	], __DIR__, admin: true);
+	];
+
+	// admin: true keeps the behaviour of the foreach this replaces — Divi fetches
+	// rendered content over admin-ajax, where is_admin() is true and the modules'
+	// shortcodes would otherwise go unregistered.
+	//
+	// Older builds of the Plura plugin have no such parameter, and passing a named
+	// argument a function does not declare is an uncatchable fatal — it takes the
+	// whole site down, not just this plugin. Degrading to frontend-only includes is
+	// survivable; a white screen is not.
+	if ( ( new ReflectionFunction('plura_includes') )->getNumberOfParameters() > 2 ) {
+
+		plura_includes($modules, __DIR__, admin: true);
+
+	} else {
+
+		plura_includes($modules, __DIR__);
+
+	}
 
 	add_action('wp_enqueue_scripts', 'publibalao_styles_and_scripts');
 
