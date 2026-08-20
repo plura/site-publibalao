@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Site shaping for [plura-wp-posts] rendered with context="pb-grid".
+ * Site shaping for posts rendered through [plura-wp-posts], one context at a time as
+ * the [pb-grid] usages are migrated.
  *
- * Replaces [pb-grid]. The old grid showed a title, an ACF label and a cropped
- * featured image and nothing else, so the default entry — which always carries a
- * date and an excerpt — has to be trimmed back to match.
+ * pb-services: the services grid. It showed a title, an ACF label and a cropped
+ * featured image and nothing else, so the default entry — which always carries a date
+ * and an excerpt — has to be trimmed back to match.
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -13,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_filter('plura_wp_post', function (array $entry, WP_Post $post, ?string $context = null): array {
 
-	if ($context !== 'pb-grid') {
+	if ($context !== 'pb-services') {
 
 		return $entry;
 
@@ -32,9 +33,9 @@ add_filter('plura_wp_post', function (array $entry, WP_Post $post, ?string $cont
 		// the English site.
 		$entry['label'] = sprintf(
 			'<div %s>%s<span %s>%s</span></div>',
-			plura_attributes(['class' => 'pb-grid-label']),
+			plura_attributes(['class' => 'pb-services-label']),
 			$label,
-			plura_attributes(['class' => 'pb-grid-label-more']),
+			plura_attributes(['class' => 'pb-services-label-more']),
 			esc_html__('Saber Mais', 'publibalao')
 		);
 

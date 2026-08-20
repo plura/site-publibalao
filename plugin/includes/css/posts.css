@@ -1,12 +1,12 @@
 /**
- * [plura-wp-posts class="pb-grid …" context="pb-grid"] — the grid replacing [pb-grid].
+ * [plura-wp-posts class="pb-grid …" context="pb-services"] — the services grid that
+ * replaces [pb-grid].
  *
- * The two hooks do different jobs. The .pb-grid class is what the wrapper inherits
- * its grid/column/fullwidth rules from, unchanged from globals.css, and what the JS
- * still reaches for. [data-context] is what these rules key on: it is set from the
- * same argument that drives the entry filter, so the styling cannot end up applied
- * to items the filter did not shape — a class alone is author-supplied and could be
- * forgotten on either side.
+ * The two hooks do different jobs. .pb-grid is the generic layout class every grid on
+ * the site carries, and what the JS reaches for. [data-context] names this particular
+ * content instead, and is what these rules key on: it comes from the same argument
+ * that drives the entry filter, so the styling cannot land on items the filter did not
+ * shape. A second context added here styles a different grid without touching either.
  *
  * Compounding with .plura-wp-posts also keeps all of it off the old grid while both
  * render, and off the pilots list, which comes through plura_wp_posts as well.
@@ -18,21 +18,21 @@
    The column count is stated here rather than read from .pb-grid's --coln: that class
    is author-supplied on the shortcode, and a missing one made this fall back to a
    single column instead of failing visibly. */
-.plura-wp-posts[data-context="pb-grid"] {
+.plura-wp-posts[data-context="pb-services"] {
 	--plura-wp-posts-cols: 1;
 	--plura-wp-posts-gap: var(--pb-globals-services-gap);
 }
 
 @media (min-width: 768px) {
 
-	.plura-wp-posts[data-context="pb-grid"] {
+	.plura-wp-posts[data-context="pb-services"] {
 		--plura-wp-posts-cols: 2;
 	}
 
 }
 
 /* the item is the <a> itself, since the shortcode passes link="1" */
-.plura-wp-posts[data-context="pb-grid"] .plura-wp-post {
+.plura-wp-posts[data-context="pb-services"] .plura-wp-post {
 	align-items: center;
 	aspect-ratio: 1 / 1;
 	/* .pb-el carried this before, and aspect-ratio resolves against whichever box
@@ -50,7 +50,7 @@
 /* Replaces the ::before that inherited an inline background-image. A real <img>
    brings srcset and lazy loading with it, and object-fit crops the way the old
    background-size: auto 100% did. */
-.plura-wp-posts[data-context="pb-grid"] .plura-wp-post-featured-image {
+.plura-wp-posts[data-context="pb-services"] .plura-wp-post-featured-image {
 	height: 100%;
 	inset: 0;
 	object-fit: cover;
@@ -60,14 +60,14 @@
 	z-index: 0;
 }
 
-.plura-wp-posts[data-context="pb-grid"] .plura-wp-post:hover .plura-wp-post-featured-image {
+.plura-wp-posts[data-context="pb-services"] .plura-wp-post:hover .plura-wp-post-featured-image {
 	transform: scale(1.2);
 }
 
 /* Only over an image, matching the old [style] gate: the overlay took its `content`
    from a rule keyed on the inline background-image, so an item with no thumbnail
    never drew one. */
-.plura-wp-posts[data-context="pb-grid"] .plura-wp-post:has(.plura-wp-post-featured-image)::after {
+.plura-wp-posts[data-context="pb-services"] .plura-wp-post:has(.plura-wp-post-featured-image)::after {
 	background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .2) 85%);
 	content: '';
 	inset: 0;
@@ -75,7 +75,7 @@
 	z-index: 1;
 }
 
-.plura-wp-posts[data-context="pb-grid"] :is(.plura-wp-post-title, .pb-grid-label) {
+.plura-wp-posts[data-context="pb-services"] :is(.plura-wp-post-title, .pb-services-label) {
 	color: white;
 	font-weight: var(--pb-globals-font-weight-600);
 	position: relative;
@@ -83,13 +83,13 @@
 	z-index: 2;
 }
 
-.plura-wp-posts[data-context="pb-grid"] .plura-wp-post-title {
+.plura-wp-posts[data-context="pb-services"] .plura-wp-post-title {
 	font-size: var(--pb-globals-font-size-h2);
 	line-height: initial;
 	text-transform: uppercase;
 }
 
-.plura-wp-posts[data-context="pb-grid"] .pb-grid-label {
+.plura-wp-posts[data-context="pb-services"] .pb-services-label {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -97,11 +97,11 @@
 	text-transform: uppercase;
 }
 
-.plura-wp-posts[data-context="pb-grid"] .pb-grid-label-more {
+.plura-wp-posts[data-context="pb-services"] .pb-services-label-more {
 	font-weight: var(--pb-globals-font-weight-700);
 }
 
-.plura-wp-posts[data-context="pb-grid"] .pb-grid-label p:last-child::before {
+.plura-wp-posts[data-context="pb-services"] .pb-services-label p:last-child::before {
 	background-color: white;
 	content: '';
 	display: block;
@@ -112,15 +112,15 @@
 
 @media (min-width: 991px) {
 
-	.plura-wp-posts[data-context="pb-grid"] .plura-wp-post {
+	.plura-wp-posts[data-context="pb-services"] .plura-wp-post {
 		aspect-ratio: 3 / 2;
 	}
 
-	.plura-wp-posts[data-context="pb-grid"] .plura-wp-post-title {
+	.plura-wp-posts[data-context="pb-services"] .plura-wp-post-title {
 		font-size: var(--pb-globals-font-size-h1);
 	}
 
-	.plura-wp-posts[data-context="pb-grid"] .pb-grid-label {
+	.plura-wp-posts[data-context="pb-services"] .pb-services-label {
 		font-size: var(--pb-globals-font-size-h5);
 	}
 
