@@ -2,21 +2,17 @@
 // and before DOMContentLoaded — no listener needed to reach the DOM.
 
 
-const page = (id) => {
-
-	const ids = Array.isArray( id ) ? id : [ id ];
-
-	for( let  [index, value] of ids.entries() ) {
-
-		if( document.body.classList.contains(value) ) {
-			return true;
-		}
-
-	}
-
-	return false;
-
-};
+/**
+ * Whether the body carries any of the given classes.
+ *
+ * Takes class names rather than IDs since the page map landed: pb-page-* comes from
+ * PB_PAGES, and WordPress's own classes (single-pb_event) mix in freely, so nothing
+ * is prefixed here.
+ *
+ * @param {string|string[]} classes One or more body classes.
+ * @return {boolean} True if the body has at least one of them.
+ */
+const page = ( classes ) => [ classes ].flat().some( c => document.body.classList.contains( c ) );
 
 //add 'real width' variable
 //document.documentElement.style.setProperty('--w', `calc(100vw - ${ p.scrollWidth() }px)`);
