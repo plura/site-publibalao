@@ -14,12 +14,21 @@
 
 /* .plura-wp-posts declares a grid of its own and .pb-grid declares another, at equal
    specificity — pointing plura's variables at the same values makes both compute the
-   same thing, so which one wins stops mattering. Columns come from the --coln
-   .pb-grid already defines (1, 2 from 768px), the gap from the services variable that
-   .fullwidth drops to 4px. */
+   same thing, so which one wins stops mattering.
+   The column count is stated here rather than read from .pb-grid's --coln: that class
+   is author-supplied on the shortcode, and a missing one made this fall back to a
+   single column instead of failing visibly. */
 .plura-wp-posts[data-context="pb-grid"] {
-	--plura-wp-posts-cols: var(--coln, 1);
+	--plura-wp-posts-cols: 1;
 	--plura-wp-posts-gap: var(--pb-globals-services-gap);
+}
+
+@media (min-width: 768px) {
+
+	.plura-wp-posts[data-context="pb-grid"] {
+		--plura-wp-posts-cols: 2;
+	}
+
 }
 
 /* the item is the <a> itself, since the shortcode passes link="1" */
