@@ -12,6 +12,16 @@
  * render, and off the pilots list, which comes through plura_wp_posts as well.
  */
 
+/* .plura-wp-posts declares a grid of its own and .pb-grid declares another, at equal
+   specificity — pointing plura's variables at the same values makes both compute the
+   same thing, so which one wins stops mattering. Columns come from the --coln
+   .pb-grid already defines (1, 2 from 768px), the gap from the services variable that
+   .fullwidth drops to 4px. */
+.plura-wp-posts[data-context="pb-grid"] {
+	--plura-wp-posts-cols: var(--coln, 1);
+	--plura-wp-posts-gap: var(--pb-globals-services-gap);
+}
+
 /* the item is the <a> itself, since the shortcode passes link="1" */
 .plura-wp-posts[data-context="pb-grid"] .plura-wp-post {
 	align-items: center;
