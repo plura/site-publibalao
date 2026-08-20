@@ -13,31 +13,50 @@
 define( 'PB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'PB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-$MODULES = [
-	'p/p',
-	'p/modules/p-revslider',
-	'p/modules/p-wp',
-	'p/modules/p-wpml',
+/**
+ * Bootstrap once every plugin is loaded rather than at file scope: this plugin now
+ * depends on the Plura plugin for plura_includes/plura_wp_enqueue/plura_wp_posts/
+ * plura_attributes, and it only resolves today because "plura" happens to sort before
+ * "publibalao" in active_plugins. Shortcodes and REST routes are consumed later, so
+ * waiting costs nothing.
+ */
+add_action('plugins_loaded', function () {
 
-	'includes/api',
-	'includes/core',
-	'includes/events',
-	'includes/locations',
-	'includes/media',
-	'includes/data',
-	'includes/import-map',
-	'includes/teams-and-pilots',
-];
+	if (!function_exists('plura_includes')) {
 
-foreach ($MODULES as $module) {
+		add_action('admin_notices', fn() => printf(
+			'<div class="notice notice-error"><p>%s</p></div>',
+			esc_html__('Publibalão requires the Plura plugin to be active.', 'publibalao')
+		));
 
-	$path = dirname(__FILE__) . "/" . $module . ".php";
+		return;
 
-	if (file_exists($path)) {
-
-		include_once($path);
 	}
-}
+
+	//admin: true keeps the behaviour of the foreach this replaces — Divi fetches
+	//rendered content over admin-ajax, where is_admin() is true and the modules'
+	//shortcodes would otherwise go unregistered
+	plura_includes([
+
+		'p/p',
+		'p/modules/p-revslider',
+		'p/modules/p-wp',
+		'p/modules/p-wpml',
+
+		'includes/api',
+		'includes/core',
+		'includes/events',
+		'includes/locations',
+		'includes/media',
+		'includes/data',
+		'includes/import-map',
+		'includes/teams-and-pilots',
+
+	], __DIR__, admin: true);
+
+	add_action('wp_enqueue_scripts', 'publibalao_styles_and_scripts');
+
+});
 
 
 function publibalao_styles_and_scripts() {
@@ -98,7 +117,6 @@ function publibalao_styles_and_scripts() {
 		wp_localize_script('pb-core', 'pb_data', $data);
 	}
 }
-add_action('wp_enqueue_scripts', 'publibalao_styles_and_scripts');
 
 
 
