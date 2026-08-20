@@ -61,7 +61,7 @@ if( typeof Fancybox !== 'undefined' ) {
 
 //FIBAQ
 
-if( page( ['wpmlobj-id-14', 'single-pb_event'] ) ) {
+if( page( ['pb-page-fibaq', 'single-pb_event'] ) ) {
 
 	//popup via menu
 	document.querySelector('header .menu-item-808 a')?.addEventListener('click', event => {
@@ -74,11 +74,11 @@ if( page( ['wpmlobj-id-14', 'single-pb_event'] ) ) {
 
 
 //MAP CONTACTOS (PUBLIBALAO E FIBAQ) / HOME / PACOTES E SERVICOS
-} else if( page( ['wpmlobj-id-2065', 'wpmlobj-id-5639', 'wpmlobj-id-2851', 'wpmlobj-id-2869'] ) ) { 
+} else if( page( ['pb-page-contacts-publibalao', 'pb-page-contacts-fibaq', 'pb-page-home', 'pb-page-packages'] ) ) { 
 
 
 	//Home / Contactos (Publibalao e FIBAQ)
-	if( page( ['wpmlobj-id-2065', 'wpmlobj-id-2851', 'wpmlobj-id-5639'] ) ) {
+	if( page( ['pb-page-contacts-publibalao', 'pb-page-home', 'pb-page-contacts-fibaq'] ) ) {
 
 		const { PBLocations } = await import('./locations.js');
 
@@ -91,7 +91,7 @@ if( page( ['wpmlobj-id-14', 'single-pb_event'] ) ) {
 	}
 
 	//Home / Pacotes e Serviços
-	if( page( ['wpmlobj-id-2851', 'wpmlobj-id-2869'] ) ) {
+	if( page( ['pb-page-home', 'pb-page-packages'] ) ) {
 
 		const observer = new ResizeObserver( entries => {
 
@@ -116,7 +116,7 @@ if( page( ['wpmlobj-id-14', 'single-pb_event'] ) ) {
 
 
 		//PACOTES
-		if( page('wpmlobj-id-2869') ) {
+		if( page('pb-page-packages') ) {
 
 			const select = document.querySelector('#popmake-2290 select');
 
@@ -142,7 +142,7 @@ if( page( ['wpmlobj-id-14', 'single-pb_event'] ) ) {
 
 
 //FIBAQ SUBSITE [FORM]
-} else if( page('wpmlobj-id-3066') ) {
+} else if( page('pb-page-fibaq-registration') ) {
 
 	const { PBForm } = await import('./fibaq-form.js');
 

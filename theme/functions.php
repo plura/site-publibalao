@@ -36,19 +36,19 @@ function my_theme_enqueue_styles() {
 		$dir . '/includes/js/scripts.js' => ['handle' => 'core', 'module' => true],
 	];
 
-	if( is_page( [3206, 3699] ) || ( is_page() && !in_array( get_the_ID(), [5639, 5697] ) && in_array( wp_get_post_parent_id(), [3206, 3699] ) ) ) {
+	if( pb_page_is('fibaq-section') || ( is_page() && !pb_page_is('contacts-fibaq') && pb_page_parent_is('fibaq-section') ) ) {
 
 		$assets[ $dir . '/includes/css/fibaq.css' ] = [];
 
 		$localize_script_data['fibaq'] = pb_lang();
 
-		if( is_page( [3066, 3644] ) ) {
+		if( pb_page_is('fibaq-registration') ) {
 
 			$assets[ $dir . '/includes/css/fibaq-register.css' ] = [];
 
 		}
 
-	} else if( pb_single( [2065,3614, 2851,4355, 5639] ) || is_singular('pb_event') ) {
+	} else if( ( is_singular() && pb_page_is( ['contacts-publibalao', 'home', 'contacts-fibaq'] ) ) || is_singular('pb_event') ) {
 
 		// Unprefixed: pb_add_integrity() below matches the 'leaflet' handle by name.
 		plura_wp_enqueue([
@@ -56,7 +56,7 @@ function my_theme_enqueue_styles() {
 			'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'  => [ 'handle' => 'leaflet' ],
 		]);
 
-	} else if( pb_single( [2109] ) ) {
+	} else if( is_singular() && pb_page_is('legacy') ) {
 
 		wp_enqueue_style('pb-theme-old', get_stylesheet_directory_uri() . '/includes/old/old.css' );
 
@@ -97,19 +97,6 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
 
 
-function pb_single( $id ) {
-
-	$ids = is_array( $id ) ? $id : [$id];
-
-	if( ( is_page() || is_singular() ) && in_array( get_the_ID(), $ids ) ) {
-
-		return true;
-
-	}
-
-	return false;
-
-}
 
 
 
@@ -219,7 +206,7 @@ add_filter('pb_shortcode_check', function ($has_shortcode, $post_id, $shortcode)
 
 				return true;
 
-			} else if( $shortcode === 'pb-headings-nav' && in_array($post->ID,[4442,13144, 4443,13140, 4444,13146]) ) {
+			} else if( $shortcode === 'pb-headings-nav' && pb_page_is('headings-nav', $post->ID) ) {
 				
 				return true;
 
