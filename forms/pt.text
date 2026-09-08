@@ -1,0 +1,127 @@
+<div class="pb-notice">
+<p>Caso prefira, poderá optar por efetuar a sua inscrição através do preenchimento do <a href="https://publibalao.com/wp/wp-content/uploads/2026/07/PILOTS_REGISTRATION_FIBAQ_2026_PT.pdf" target="_blank">formulário em PDF</a>. O formulário e todos os documentos solicitados no mesmo, deverão ser enviados por e-mail para <a href="mailto:fibaq@publibalao.com">fibaq@publibalao.com</a> até dia 1 de Outubro de 2026.</p>
+</div>
+
+<h2>Informação Piloto</h2>
+
+[text* pilot-firstname placeholder "Primeiro Nome"]
+
+[text* pilot-lastname placeholder "Último Nome"]
+
+[text* pilot-address1 placeholder "Endereço"]
+
+[text pilot-address2 placeholder "Endereço (cont.)"]
+
+[text pilot-city placeholder "Cidade"]
+
+[select* pilot-country first_as_label "País"]
+
+[text pilot-cep placeholder "Código Postal"]
+
+[tel* pilot-phone placeholder "Número de Telefone"]
+
+[email* pilot-email placeholder "Email"] 
+
+[text pilot-id placeholder "Cartão de cidadão"] [cf7mls_step cf7mls_step-1 "Experiência" ""]<h2>Experiência Piloto Balão de Ar Quente</h2>
+
+[text* pilot-experience placeholder "Experiência Voo"]
+
+[text* pilot-ax-pic-hours placeholder "AX PIC Hours"]
+
+[file pilot-license filetypes:image/*|doc|docx|txt|pdf limit:2mb placeholder "Licença de Piloto"]
+
+[file pilot-medical-exam filetypes:image/*|doc|docx|txt|pdf limit:2mb placeholder "Exame Médico"]
+
+[cf7mls_step cf7mls_step-2 "Informação" "Informação Balão" "Step 2"]<h2>Informação Balão de Ar Quente</h2>
+
+[text* balloon-owner-name placeholder "Nome do Proprietário do Balão"]
+
+[text* balloon-registration placeholder "Matrícula do Balão"]
+
+[text balloon-type placeholder "Tipo"]
+
+[text balloon-manufacturer placeholder "Fabricante"]
+
+[text balloon-sponsor placeholder "Patrocinador"]
+
+[number* balloon-passengers-number min:0 placeholder "Leva Passageiros? Quantos?"]
+
+[file balloon-photo filetypes:image/*|doc|docx|txt|pdf limit:2mb placeholder "Foto"]
+
+[file balloon-certificate filetypes:image/*|doc|docx|txt|pdf limit:2mb placeholder "Certificado Navegabilidade"]
+
+[file balloon-certificate-registration filetypes:image/*|doc|docx|txt|pdf limit:2mb placeholder "Certificado Matrícula"]
+
+[file balloon-arc filetypes:image/*|doc|docx|txt|pdf limit:2mb placeholder "ARC"]
+
+[text balloon-insurance-company placeholder "Companhia Seguro"]
+
+[file balloon-insurance filetypes:image/*|doc|docx|txt|pdf limit:2mb placeholder "Seguro"]
+
+[text balloon-insurance-apolice-number placeholder "Nº Apólice"]
+
+[text balloon-insurance-apolice-expiration-date placeholder "Validade"]
+
+
+[cf7mls_step cf7mls_step-3 "Experiência" "Equipa" "Step 3"]<h2>Informação Equipa</h2>
+
+[text* crew-name1 placeholder "Nome Resgate 1"]
+
+[group group-crew-name-2][text crew-name2 placeholder "Nome Resgate 2"][/group]
+
+[group group-crew-name-3][text crew-name3 placeholder "Nome Resgate 3"][/group]
+
+<h3>Nº e Tipo de Quartos Pretendido</h3>
+
+<p class="wpcf7-exclude">As equipas, serão maioritariamente colocadas em quartos duplos e triplos pelo que os quartos singulares não são garantidos mesmo que coloque essa opção.</p>
+
+[number crew-room-type-number-single min:0 placeholder "Single"]
+
+[number crew-room-type-number-couple min:0 placeholder "Casal"]
+
+[number crew-room-type-number-single-double min:0 placeholder "Single Duplo"]
+
+[number crew-room-type-number-triple min:0 placeholder "Triplo"]
+
+
+<p class="wpcf7-exclude">De forma a ajudar a organização na reserva dos alojamentos, as equipas deverão informar a organização o seu dia e hora de check-in e check-out.</p>
+
+[date* date-checkin min:2026-11-06 max:2026-11-13 "2026-11-06"]
+
+[date* date-checkout min:2026-11-06 max:2026-11-13 "2026-11-13"]
+
+[cf7mls_step cf7mls_step-4 "Informação Balão" "Fatura" "Step 4"]<h2>Fatura</h2>
+
+[checkbox invoice "Sim" "Não"]
+
+[text invoice-name placeholder "Nome"]
+
+[number invoice-vat placeholder "NIF"]
+
+[text invoice-address placeholder "Endereço"]
+
+<div id="pilot-registration-value">
+
+<div id="pilot-registration-rescue-value">Valor a pagar: [group group-rescue-value-0]800[/group][group group-rescue-value-1]400[/group][group group-rescue-value-2]800[/group][group group-rescue-value-3]1200[/group]<span>€</span></div>
+
+<ul id="pilot-registration-value-faqs">
+<li>O pagamento da inscrição deverá ser efetuado por transferência bancária (até 7 dias antes da data de check-in) ou em dinheiro no momento do check-in</li>
+<li>De forma a que possamos confirmar a sua inscrição, e caso pretenda efetuar o pagamento por transferência bancária, pedimos que nos envie o comprovativo correspondente para <a href="mailto:fibaq@publibalao.com">fibaq@publibalao.com</a></li>
+</ul>
+
+<div id="pilot-registration-value-payment"><strong>Detalhes para Transferência Bancária:</strong><br/>
+Nome do Titular: ALENTEJO SEM FRONTEIRAS – CLUBE DE BALONISMO<br/>
+IBAN: PT50 0045 6430 4024 3099 9362 6<br/>
+BIC/SWIFT: CCCMPTPL
+</div>
+
+</div>
+
+[cf7mls_step cf7mls_step-5 "Equipa" "Conclusão" "Step 5"]<h2>Finalizar</h2>
+
+[textarea comments placeholder "Observações"]
+
+[acceptance consent] Com a inscrição e submissão deste formulário, o piloto aceita automaticamente este Termo de Responsabilidade bem como as condições descritas nos NOTAM emitidos pela ANAC bem como a sua responsabilidade por qualquer dano causado pelo próprio ou pela sua equipa durante o evento.[/acceptance]
+
+[submit "Enviar"]
+[cf7mls_step cf7mls_step-6 "Fatura" "Step 6"]
