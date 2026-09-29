@@ -47,15 +47,24 @@ add_shortcode('pb-social-icons', 'pb_social_icons');
 
 function pb_date( $atts ) {
 
-	$atts = shortcode_atts(['id' => ''], $atts );
+	$atts = shortcode_atts(['id' => '', 'format' => ''], $atts );
 
 	$post = get_post( !empty( $atts['id'] ) ? $atts['id'] : get_the_ID() );
 
-	if( $post ) {
+	//an empty value would otherwise render as today
+	$date = $post ? get_field('pb_date', $post->ID) : null;
 
-		$date = get_field('pb_date', $post->ID);
+	if( $date ) {
 
-		$d = new DateTime( $date );
+		try {
+
+			$d = new DateTime( $date );
+
+		} catch ( Exception $e ) {
+
+			return '';
+
+		}
 
 		$values = [
 			'%Y' => $d->format('Y'),
@@ -64,7 +73,7 @@ function pb_date( $atts ) {
 			'%F' => date_i18n('F', $d->getTimeStamp())
 		];
 
-		if( !isset( $atts['format'] ) ) {
+		if( empty( $atts['format'] ) ) {
 
 			$format = "<div class=\"pb-date\"><div class=\"pb-date-item pb-date-item-day\">%d</div><div class=\"pb-date-item pb-date-item-month\">%F</div></div>";
 
@@ -77,6 +86,8 @@ function pb_date( $atts ) {
 		return str_replace( array_keys($values), array_values($values), $format);
 
 	}
+
+	return '';
 
 }
 
