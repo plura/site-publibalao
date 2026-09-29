@@ -138,21 +138,23 @@ $pb_icon_pilot_mask = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w
 
 // 1) Parent menu → default to Participants List
 add_action('admin_menu', function () use ($pb_icon_main_white) {
-	add_menu_page(
+	$hook = add_menu_page(
 		'Publibalão',
 		'Publibalão',
 		'edit_posts',
 		'publibalao',
-		function () {
-			if (current_user_can('edit_posts')) {
-				wp_safe_redirect(admin_url('edit.php?post_type=pb_participants_list'));
-				exit;
-			}
-			wp_die(__('You do not have permission to access this page.'));
-		},
+		'__return_null',
 		$pb_icon_main_white,
 		5
 	);
+
+	// Redirect on load-{hook}, before the admin header prints: the page callback runs
+	// after it, where the redirect only works if the server happens to buffer output.
+	// WP has already checked edit_posts by then.
+	add_action("load-{$hook}", function () {
+		wp_safe_redirect(admin_url('edit.php?post_type=pb_participants_list'));
+		exit;
+	});
 });
 
 // 2) Group CPTs under parent
