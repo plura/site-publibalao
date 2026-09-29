@@ -57,7 +57,7 @@ document.querySelectorAll('.pb-button-content-popup').forEach(element => {
 	resolvePage({ id: element.dataset.pbTargetId, acf_field: source.acf_field, params: source.params }).then(data => {
 		element.addEventListener('click', event => {
 			event.preventDefault();
-			popOpenAndUpdatePopup(source.popup_id, { title: data.page_title, content: data.content_html, id: data.id });
+			popOpenAndUpdatePopup(source.popup_id, { title: data.page_title, content: data.content_html, id: data.page_id });
 
 		})
 	});

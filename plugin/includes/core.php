@@ -30,15 +30,15 @@
 
     $classes = ['pb-button', 'pb-button-content-popup', 'popmake-' . $popup_id];
 
-    if( !empty( $classes ) ) {
+    if( !empty( $class ) ) {
 
-        $classes = array_merge( $classes, is_array( $class ) ? $class : explode(',', $class)  );
+        $classes = array_merge( $classes, is_array( $class ) ? $class : preg_split('/[\s,]+/', $class, -1, PREG_SPLIT_NO_EMPTY) );
 
     }
 
     $atts['class'] = implode(' ', $classes);
 
-    return "<a " . plura_attributes( $atts ) . ">" . $label . "</a>";
+    return "<a " . plura_attributes( $atts ) . ">" . esc_html( $label ) . "</a>";
 
  }
 

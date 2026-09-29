@@ -40,8 +40,8 @@ export function PBForm({config}) {
 
 
 		//pt
-		//plura_wpml_lang() returns false when WPML is inactive
-		if( !config.lang?.match(/pt/) ) {
+		//plura_wpml_lang() returns false when WPML is inactive, which ?. does not guard
+		if( config.lang && !/pt/.test( config.lang ) ) {
 
 			for( const n in response.dictionary_pt2en ) {
 
