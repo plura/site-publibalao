@@ -12,7 +12,7 @@ add_shortcode('pb-pilots', function( $atts ) {
 
 	if( !empty( $ids ) ) {
 
-		return plura_wp_posts(type: 'pb_pilots', ids: $ids);
+		return plura_wp_posts(type: 'pb_pilot', ids: $ids);
 
 	}
 
