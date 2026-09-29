@@ -31,22 +31,19 @@ function pb_locations( WP_REST_Request $request ) {
 
 		}
 
-		if( !empty( $locations_data ) ) {
-
-			return $locations_data;
-
-		}
+		return $locations_data;
 
 	}
 
-	return false;
+	return [];
 
 }
 
 
 function pb_location( $location ) {
 
-	$data = ['id' => $location->ID];
+	//decoded because the JS writes it as text, not HTML
+	$data = ['id' => $location->ID, 'name' => html_entity_decode( get_the_title( $location ), ENT_QUOTES )];
 
 	$lat = get_field('lat', $location->ID);
 

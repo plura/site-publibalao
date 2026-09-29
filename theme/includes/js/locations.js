@@ -33,13 +33,18 @@ export function PBLocations({restPath, mapHolder, listHolder}) {
 			}
 
 
-			data.forEach( location => { 
+			//pb_location() also returns url-only entries, which Leaflet cannot place
+			data.filter( location => location.lat && location.lng ).forEach( location => {
+
+				const popup = document.createElement('div');
+
+				popup.textContent = location.name;
 
 				marker = L.marker( [ Number( location.lat ), Number( location.lng ) ] )
 
 							//.setIcon( getIcon() )
 
-							.bindPopup(`${location.name}`, {className: `${PRFX}-location`})
+							.bindPopup( popup, {className: `${PRFX}-location`})
 
 							.addTo( map );
 
@@ -127,6 +132,6 @@ export function PBLocations({restPath, mapHolder, listHolder}) {
 		};
 
 
-	fetch(restPath + 'pb/v1/location/').then(response => response.json()).then(response => init(response));
+	fetch(restPath + 'pb/v1/location/').then(response => response.json()).then(response => init( Array.isArray( response ) ? response : [] ));
 
 }
