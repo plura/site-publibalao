@@ -12,6 +12,7 @@
         "useTempFile": false,
         "openSsh": false,
         "syncMode": "full",
+        "ignore": [".git", ".gitignore", ".gitkeep", ".claude", "*.code-workspace"],
         "syncOption": {
             "delete": true
         }
@@ -29,6 +30,7 @@
         "useTempFile": false,
         "openSsh": false,
         "syncMode": "full",
+        "ignore": [".git", ".gitignore", ".gitkeep", ".claude", "*.code-workspace"],
         "syncOption": {
             "delete": true
         }
@@ -46,8 +48,9 @@
         "useTempFile": false,
         "openSsh": false,
         "syncMode": "full",
+        "ignore": [".git", ".gitignore", ".gitkeep", ".claude", "*.code-workspace"],
         "syncOption": {
-            "delete": true
+            "delete": false
         }
     }
 ]

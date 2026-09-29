@@ -5,3 +5,4 @@ sftp-config.json
 other-plugins/
 cf7.txt
 cf7-en.txt
+*.code-workspace
