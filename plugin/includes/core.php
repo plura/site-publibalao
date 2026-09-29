@@ -83,7 +83,7 @@
 
     $post = get_post( $id );
 
-    if( $post ) {
+    if( $post && pb_rest_can_view( $post ) ) {
 
         return [
             'id' => $post->ID,

@@ -7,12 +7,14 @@ add_action( 'rest_api_init', function () {
     register_rest_route( 'pb/v1', '/content/', array(
 		'methods' => 'GET',
 		'callback' => 'pb_content',
+		'permission_callback' => '__return_true',
   	) );
 
     //locations
 	register_rest_route( 'pb/v1', '/location/', array(
 		'methods' => 'GET',
 		'callback' => 'pb_locations',
+		'permission_callback' => '__return_true',
   	) );
 
 } );

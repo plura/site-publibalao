@@ -59,6 +59,7 @@ add_action( 'rest_api_init', function () {
 	register_rest_route( 'pb/v1', '/lang/', array(
 		'methods' => 'GET',
 		'callback' => 'pb_lang',
+		'permission_callback' => '__return_true',
   	) );
 
 } );

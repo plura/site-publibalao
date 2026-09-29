@@ -52,6 +52,21 @@ add_action('rest_api_init', function () {
 	]);
 });
 
+/**
+ * Whether the current request may read a post through the public endpoints.
+ *
+ * These routes are open and take arbitrary IDs, so without this they would hand out
+ * drafts, private and password-protected posts, and non-public types such as CF7 forms.
+ *
+ * @param WP_Post $post
+ * @return bool
+ */
+function pb_rest_can_view(WP_Post $post): bool
+{
+	return (is_post_publicly_viewable($post) && !post_password_required($post))
+		|| current_user_can('read_post', $post->ID);
+}
+
 function pb_resolve_page(WP_REST_Request $req): WP_REST_Response
 {
 	$id               = (int) ($req->get_param('id') ?? 0);
@@ -92,7 +107,7 @@ function pb_resolve_page(WP_REST_Request $req): WP_REST_Response
 	}
 
 	$page = get_post($page_id);
-	if (!$page /* || 'publish' !== $page->post_status */) {
+	if (!$page || !pb_rest_can_view($page)) {
 		return new WP_REST_Response([
 			'ok'      => false,
 			'error'   => 'Page not found or not published.',
@@ -183,7 +198,9 @@ function pb_resolve_page(WP_REST_Request $req): WP_REST_Response
 
 	if ($linked_id > 0) {
 		$linked = get_post($linked_id);
-		if ($linked && 'publish' === $linked->post_status) {
+		// Status alone rather than pb_rest_can_view(): the target is picked by an editor,
+		// and popup sources may be a CPT that is not publicly queryable.
+		if ($linked && 'publish' === $linked->post_status && !post_password_required($linked)) {
 			$response['content_src']  = 'linked_post';
 			$response['content_html'] = apply_filters('the_content', $linked->post_content ?? '');
 			$response['linked_post']  = [
@@ -212,7 +229,6 @@ function pb_resolve_page(WP_REST_Request $req): WP_REST_Response
 	if ($fallback_to_page) {
 		$response['content_src']  = 'page';
 		$response['content_html'] = apply_filters('the_content', $page->post_content ?? '');
-		$response['acf_raw']      = $acf_value;
 		return new WP_REST_Response($response, 200);
 	}
 
