@@ -9,7 +9,10 @@
 
 function pb_event_countdown( $id ) {
 
-	return do_shortcode( '[wpcdt-countdown id="$id"]' );
+	//the timer field may hand back a post rather than an ID
+	$id = $id instanceof WP_Post ? $id->ID : absint( $id );
+
+	return do_shortcode( sprintf( '[wpcdt-countdown id="%d"]', $id ) );
 
 }
 
@@ -24,9 +27,11 @@ function pb_event_countdown_shortcode( $args ) {
 
 		$id = !empty( $atts['id'] ) ? $atts['id'] : get_field('timer');
 
-		return pb_event_countdown( $atts['id'] );
+		return pb_event_countdown( $id );
 
-	}	
+	}
+
+	return '';
 
 }
 
@@ -55,13 +60,17 @@ function pb_event_banner_data_shortcode( $args ) {
 
 	) {
 
-		return pb_event_countdown( !empty( $atts['id'] ) ? $atts['id'] : get_the_ID() );
+		$data = pb_event_banner_data( !empty( $atts['id'] ) ? $atts['id'] : get_the_ID() );
 
-	}	
+		return is_scalar( $data ) ? (string) $data : '';
+
+	}
+
+	return '';
 
 }
 
-add_shortcode('pb-event-banner-data', 'pb_event_banner_data');
+add_shortcode('pb-event-banner-data', 'pb_event_banner_data_shortcode');
 
 
 
@@ -127,7 +136,7 @@ function pb_event_locations_shortcode( $args ) {
 
 		$id = !empty( $atts['id'] ) ? $atts['id'] : get_the_ID();
 
-		return pb_event_locations( id: $atts['id'], link: $atts['link'] );
+		return pb_event_locations( id: $id, link: $atts['link'] );
 
 	}	
 
