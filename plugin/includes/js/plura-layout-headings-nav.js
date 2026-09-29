@@ -9,16 +9,17 @@ export function createTreeNavigation({ target = document.body, holder = document
     // Find all the headings starting from the highestHeadingLevel downwards
     const headings = target.querySelectorAll(`h${highestHeadingLevel}, h${highestHeadingLevel + 1}, h${highestHeadingLevel + 2}, h${highestHeadingLevel + 3}, h${highestHeadingLevel + 4}`);
 
-    // Track the current heading level to maintain hierarchy
-    let currentLevel = highestHeadingLevel;
-    let currentList = document.createElement('ul');
-    currentList.className = 'plura-layout-heading-tree-nav-list';
-    treeContainer.appendChild(currentList);
+    const createList = () => {
+        const list = document.createElement('ul');
+        list.className = 'plura-layout-heading-tree-nav-list';
+        return list;
+    };
 
     const headingMap = new Map(); // Maps headings to their corresponding list items
 
-    // Stack to track the nested list structure as we go deeper
-    const listStack = [currentList];
+    // Open lists, each with the level it was opened for. The root takes any level, so
+    // content that starts at an h3, or skips a level, still has somewhere to go.
+    const listStack = [{ list: treeContainer.appendChild(createList()), level: 0 }];
 
     headings.forEach(heading => {
         const level = parseInt(heading.tagName.substring(1)); // Extract number from H2, H3, etc.
@@ -42,23 +43,22 @@ export function createTreeNavigation({ target = document.body, holder = document
 
         listItem.appendChild(link);
 
-        // Adjust the hierarchy based on heading levels
-        if (level > currentLevel) {
-            // We're moving deeper into the hierarchy (e.g., H2 -> H3)
-            const nestedList = document.createElement('ul');
-            nestedList.className = 'plura-layout-heading-tree-nav-list';
-            listStack[listStack.length - 1].lastChild.appendChild(nestedList); // Append to the last list's last item
-            listStack.push(nestedList); // Push new list to the stack
-        } else if (level < currentLevel) {
-            // We're moving up in the hierarchy (e.g., H3 -> H2)
-            while (listStack.length > 1 && currentLevel > level) {
-                listStack.pop(); // Pop the stack until we're at the correct level
-                currentLevel--;
-            }
+        // Close lists opened for deeper headings (e.g., H3 -> H2)
+        while (listStack.length > 1 && level < listStack.at(-1).level) {
+            listStack.pop();
         }
 
-        currentLevel = level;
-        listStack[listStack.length - 1].appendChild(listItem); // Append to the current list in the stack
+        // Nest only under an item that is actually shallower: a missing or same-level
+        // previous item is a sibling, not a parent
+        let { list } = listStack.at(-1);
+        const parentItem = list.lastElementChild;
+
+        if (parentItem && Number(parentItem.dataset.pluraLayoutHeadingNavItemLevel) < level) {
+            list = parentItem.querySelector(':scope > ul') ?? parentItem.appendChild(createList());
+            listStack.push({ list, level });
+        }
+
+        list.appendChild(listItem);
 
         // Add click event listener to the link to activate and scroll
         link.addEventListener('click', function (e) {
