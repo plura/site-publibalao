@@ -302,6 +302,8 @@ small {
   aspect-ratio: 4 / 5;
   border-radius: calc(var(--plura-wp-posts-gap) / 6);
   object-fit: cover;
+  /* align-items: center above stops the stretch, so a small image would keep its own width */
+  width: 100%;
 }
 
 .plura-wp-posts.pb-participants-list .plura-wp-post .plura-wp-post-title {
