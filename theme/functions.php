@@ -70,13 +70,9 @@ function my_theme_enqueue_styles() {
 
 			$assets[ $dir . '/includes/css/fibaq-mec-event.css' ] = [];
 
-			// The edition's year comes from the event itself (MEC stores Y-m-d), not
-			// the calendar: keyed on today, a past edition lost its styles every
-			// January. plura_wp_enqueue skips missing files, so no file_exists() here.
-			$start = (string) get_post_meta( get_the_ID(), 'mec_start_date', true );
-			$year  = preg_match( '/^\d{4}/', $start, $m ) ? $m[0] : wp_date('Y');
-
-			$assets[ $dir . '/includes/css/fibaq-mec-event/' . $year . '.css' ] = ['handle' => 'fibaq-mec-event-year'];
+			// Booking form layout. Its per-event rules key off post IDs, so each new
+			// edition's events have to be added to it.
+			$assets[ $dir . '/includes/css/fibaq-mec-event-booking.css' ] = [];
 
 		}
 
