@@ -70,9 +70,16 @@ function my_theme_enqueue_styles() {
 
 			$assets[ $dir . '/includes/css/fibaq-mec-event.css' ] = [];
 
-			// Booking form layout. Its per-event rules key off post IDs, so each new
-			// edition's events have to be added to it.
+			// Booking form layout shared by every edition.
 			$assets[ $dir . '/includes/css/fibaq-mec-event-booking.css' ] = [];
+
+			// Per-event field numbers for that edition's Cativo forms. The year is the
+			// event's own (MEC stores Y-m-d), so a past edition keeps its file after
+			// January. plura_wp_enqueue skips missing files, so no file_exists() here.
+			$start = (string) get_post_meta( get_the_ID(), 'mec_start_date', true );
+			$year  = preg_match( '/^\d{4}/', $start, $m ) ? $m[0] : wp_date('Y');
+
+			$assets[ $dir . '/includes/css/fibaq-mec-event-booking/' . $year . '.css' ] = ['handle' => 'fibaq-mec-event-booking-year'];
 
 		}
 
@@ -223,6 +230,19 @@ add_filter('pb_shortcode_check', function ($has_shortcode, $post_id, $shortcode)
 
 
 /**
+ * MEC categories the booking form styles tell apart, as PT and EN term IDs. Each match
+ * is emitted as a `pb-mec-event-category-<key>` body class, so the CSS carries no IDs
+ * and no per-language pair.
+ */
+const PB_MEC_CATEGORIES = [
+
+	'solidario' => [78, 79],
+	'cativo'    => [74, 80],
+
+];
+
+
+/**
  * Add MEC category classes to the <body> on single event pages.
  * Works even if the template doesn't use post_class().
  */
@@ -233,6 +253,12 @@ add_filter('body_class', function ($classes) {
             foreach ($terms as $term) {
                 $classes[] = 'mec-category-id-' . (int) $term->term_id;
                 $classes[] = 'mec-category-' . sanitize_html_class($term->slug);
+
+                foreach (PB_MEC_CATEGORIES as $key => $ids) {
+                    if (in_array((int) $term->term_id, $ids, true)) {
+                        $classes[] = 'pb-mec-event-category-' . $key;
+                    }
+                }
             }
         }
     }
